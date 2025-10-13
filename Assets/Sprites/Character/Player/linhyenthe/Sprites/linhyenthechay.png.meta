@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: e68ca7a53be474e469c411648e9c792f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6177781497292239967
+    second: linhyenthechay_0
+  - first:
+      213: -1570645767578364978
+    second: linhyenthechay_1
+  - first:
+      213: 2285602996625614605
+    second: linhyenthechay_2
+  - first:
+      213: -1891345530110540404
+    second: linhyenthechay_3
+  - first:
+      213: 5288669204825011107
+    second: linhyenthechay_4
+  - first:
+      213: -1884907053620330941
+    second: linhyenthechay_5
+  - first:
+      213: -5079933261568860597
+    second: linhyenthechay_6
+  - first:
+      213: 8243299637332712865
+    second: linhyenthechay_7
+  - first:
+      213: -6941940046266267486
+    second: linhyenthechay_8
+  - first:
+      213: -2586636041341927983
+    second: linhyenthechay_9
+  - first:
+      213: -707478641899444097
+    second: linhyenthechay_10
+  - first:
+      213: 6034042200516510691
+    second: linhyenthechay_11
+  - first:
+      213: 300442820395619312
+    second: linhyenthechay_12
+  - first:
+      213: 982653966660316700
+    second: linhyenthechay_13
+  - first:
+      213: 7597372086011473789
+    second: linhyenthechay_14
+  - first:
+      213: -4862687393954525590
+    second: linhyenthechay_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: linhyenthechay_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 252
+        width: 124
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f54b51e5a83ebb550800000000000000
+      internalID: 6177781497292239967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 252
+        width: 123
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3558bfef1f33ae0800000000000000
+      internalID: -1570645767578364978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_2
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 253
+        width: 130
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d072077d0d718bf10800000000000000
+      internalID: 2285602996625614605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_3
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 252
+        width: 133
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c850d3ad24790c5e0800000000000000
+      internalID: -1891345530110540404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_4
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 252
+        width: 136
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a374280f90256940800000000000000
+      internalID: 5288669204825011107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_5
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 252
+        width: 132
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ef45a750777d5e0800000000000000
+      internalID: -1884907053620330941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_6
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 252
+        width: 129
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e1f7dfc937089b0800000000000000
+      internalID: -5079933261568860597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_7
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 252
+        width: 133
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ad92546855166270800000000000000
+      internalID: 8243299637332712865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 44
+        width: 115
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a88d32de4649af90800000000000000
+      internalID: -6941940046266267486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_9
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 44
+        width: 109
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dd7798993c6a1cd0800000000000000
+      internalID: -2586636041341927983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_10
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 44
+        width: 118
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f78686f6ce78e26f0800000000000000
+      internalID: -707478641899444097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_11
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 44
+        width: 124
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e3c08169693db350800000000000000
+      internalID: 6034042200516510691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_12
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 44
+        width: 122
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f35ff047236b2400800000000000000
+      internalID: 300442820395619312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_13
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 44
+        width: 119
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1eaaeb839613ad00800000000000000
+      internalID: 982653966660316700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_14
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 44
+        width: 131
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7fae2dd8a94f6960800000000000000
+      internalID: 7597372086011473789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthechay_15
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 44
+        width: 124
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e029d2493448cb0800000000000000
+      internalID: -4862687393954525590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ba2d8677ed6bbb844bc697715e961467
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      linhyenthechay_0: 6177781497292239967
+      linhyenthechay_1: -1570645767578364978
+      linhyenthechay_10: -707478641899444097
+      linhyenthechay_11: 6034042200516510691
+      linhyenthechay_12: 300442820395619312
+      linhyenthechay_13: 982653966660316700
+      linhyenthechay_14: 7597372086011473789
+      linhyenthechay_15: -4862687393954525590
+      linhyenthechay_2: 2285602996625614605
+      linhyenthechay_3: -1891345530110540404
+      linhyenthechay_4: 5288669204825011107
+      linhyenthechay_5: -1884907053620330941
+      linhyenthechay_6: -5079933261568860597
+      linhyenthechay_7: 8243299637332712865
+      linhyenthechay_8: -6941940046266267486
+      linhyenthechay_9: -2586636041341927983
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
