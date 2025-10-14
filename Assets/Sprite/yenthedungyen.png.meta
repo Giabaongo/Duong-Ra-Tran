@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: e9c55e3d7a79c114881b499afc9164cb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1967809867020118228
+    second: yenthedungyen_0
+  - first:
+      213: 7223999818974622536
+    second: yenthedungyen_1
+  - first:
+      213: -6887395915718519383
+    second: yenthedungyen_2
+  - first:
+      213: 7704995869196755031
+    second: yenthedungyen_3
+  - first:
+      213: 4289919273776885022
+    second: yenthedungyen_4
+  - first:
+      213: -349360993401756521
+    second: yenthedungyen_5
+  - first:
+      213: 3839921699345588040
+    second: yenthedungyen_6
+  - first:
+      213: -2294670549315545000
+    second: yenthedungyen_7
+  - first:
+      213: -139937250495813796
+    second: yenthedungyen_8
+  - first:
+      213: -4338613679098813210
+    second: yenthedungyen_9
+  - first:
+      213: 1457791655159219101
+    second: yenthedungyen_10
+  - first:
+      213: -4200100560875967811
+    second: yenthedungyen_11
+  - first:
+      213: 3926387704579798996
+    second: yenthedungyen_12
+  - first:
+      213: -70792131260216496
+    second: yenthedungyen_13
+  - first:
+      213: 987662892130525691
+    second: yenthedungyen_14
+  - first:
+      213: 6591085792177362573
+    second: yenthedungyen_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: yenthedungyen_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 263
+        width: 87
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c27d1c21a5fe0b4e0800000000000000
+      internalID: -1967809867020118228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_1
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 263
+        width: 87
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 843f77b9f8dc04460800000000000000
+      internalID: 7223999818974622536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_2
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 263
+        width: 86
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a51f18d7ed0b60a0800000000000000
+      internalID: -6887395915718519383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_3
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 263
+        width: 85
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75023539be4adea60800000000000000
+      internalID: 7704995869196755031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_4
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 263
+        width: 91
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1da29cb9dad88b30800000000000000
+      internalID: 4289919273776885022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_5
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 263
+        width: 86
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79429e90702d62bf0800000000000000
+      internalID: -349360993401756521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_6
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 263
+        width: 99
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84fdec6d0742a4530800000000000000
+      internalID: 3839921699345588040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_7
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 263
+        width: 87
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8581f770b41b720e0800000000000000
+      internalID: -2294670549315545000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_8
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 31
+        width: 87
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c572a55efc7de0ef0800000000000000
+      internalID: -139937250495813796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_9
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 31
+        width: 86
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e42aa788d52ac3c0800000000000000
+      internalID: -4338613679098813210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_10
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 31
+        width: 88
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d934b4269cd1b3410800000000000000
+      internalID: 1457791655159219101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_11
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 31
+        width: 89
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbaa1100bce36b5c0800000000000000
+      internalID: -4200100560875967811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_12
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 31
+        width: 86
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d7b0fd70d45d7630800000000000000
+      internalID: 3926387704579798996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_13
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 31
+        width: 93
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b87538eee740ff0800000000000000
+      internalID: -70792131260216496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_14
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 31
+        width: 130
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf16643ea22e4bd00800000000000000
+      internalID: 987662892130525691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthedungyen_15
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 31
+        width: 116
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d861bde5b9d387b50800000000000000
+      internalID: 6591085792177362573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      yenthedungyen_0: -1967809867020118228
+      yenthedungyen_1: 7223999818974622536
+      yenthedungyen_10: 1457791655159219101
+      yenthedungyen_11: -4200100560875967811
+      yenthedungyen_12: 3926387704579798996
+      yenthedungyen_13: -70792131260216496
+      yenthedungyen_14: 987662892130525691
+      yenthedungyen_15: 6591085792177362573
+      yenthedungyen_2: -6887395915718519383
+      yenthedungyen_3: 7704995869196755031
+      yenthedungyen_4: 4289919273776885022
+      yenthedungyen_5: -349360993401756521
+      yenthedungyen_6: 3839921699345588040
+      yenthedungyen_7: -2294670549315545000
+      yenthedungyen_8: -139937250495813796
+      yenthedungyen_9: -4338613679098813210
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
