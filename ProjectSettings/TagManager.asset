@@ -2,7 +2,11 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
+<<<<<<< HEAD
   serializedVersion: 3
+=======
+  serializedVersion: 2
+>>>>>>> a2549d75ac86146b9fb0253d8fa7466a365558f9
   tags: []
   layers:
   - Default
@@ -41,6 +45,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: Map
     uniqueID: 998286645
     locked: 0
@@ -49,3 +54,5 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+=======
+>>>>>>> a2549d75ac86146b9fb0253d8fa7466a365558f9
