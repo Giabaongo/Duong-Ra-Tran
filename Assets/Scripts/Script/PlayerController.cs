@@ -1,20 +1,23 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
+
     public float Movespeed = 2f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Animator animator;
-   
+
+
+    //private bool facingLeft = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-      
+
     }
 
     // Update is called once per frame
@@ -70,7 +73,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
- 
-   
+
+
 
 }
