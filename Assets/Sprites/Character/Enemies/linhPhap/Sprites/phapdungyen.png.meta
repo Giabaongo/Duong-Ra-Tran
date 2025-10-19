@@ -120,6 +120,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -127,12 +140,12 @@ TextureImporter:
       name: phapdungyen_0
       rect:
         serializedVersion: 2
-        x: 109
-        y: 742
-        width: 121
-        height: 299
+        x: 110
+        y: 743
+        width: 119
+        height: 297
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -149,12 +162,12 @@ TextureImporter:
       name: phapdungyen_1
       rect:
         serializedVersion: 2
-        x: 387
-        y: 742
-        width: 160
-        height: 299
+        x: 388
+        y: 743
+        width: 158
+        height: 297
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -171,12 +184,12 @@ TextureImporter:
       name: phapdungyen_2
       rect:
         serializedVersion: 2
-        x: 716
-        y: 742
-        width: 126
-        height: 299
+        x: 718
+        y: 743
+        width: 123
+        height: 297
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,12 +206,12 @@ TextureImporter:
       name: phapdungyen_3
       rect:
         serializedVersion: 2
-        x: 112
-        y: 401
-        width: 119
-        height: 300
+        x: 113
+        y: 402
+        width: 117
+        height: 298
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -215,12 +228,12 @@ TextureImporter:
       name: phapdungyen_4
       rect:
         serializedVersion: 2
-        x: 392
-        y: 401
-        width: 161
-        height: 300
+        x: 393
+        y: 402
+        width: 159
+        height: 298
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +250,12 @@ TextureImporter:
       name: phapdungyen_5
       rect:
         serializedVersion: 2
-        x: 716
-        y: 401
-        width: 134
-        height: 298
+        x: 717
+        y: 402
+        width: 132
+        height: 296
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +272,12 @@ TextureImporter:
       name: phapdungyen_6
       rect:
         serializedVersion: 2
-        x: 117
-        y: 31
-        width: 119
-        height: 308
+        x: 118
+        y: 32
+        width: 117
+        height: 306
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +294,12 @@ TextureImporter:
       name: phapdungyen_7
       rect:
         serializedVersion: 2
-        x: 406
-        y: 30
-        width: 123
-        height: 309
+        x: 407
+        y: 31
+        width: 121
+        height: 307
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +316,12 @@ TextureImporter:
       name: phapdungyen_8
       rect:
         serializedVersion: 2
-        x: 733
-        y: 30
-        width: 128
-        height: 311
+        x: 734
+        y: 31
+        width: 126
+        height: 309
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: aab189f0c8a75e241ac09ef971137559
     internalID: 0
     vertices: []
     indices: 
@@ -333,7 +346,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       phapdungyen_0: 8989222316770887675
       phapdungyen_1: -3625344600644497680
