@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
 
-    //private bool facingLeft = false;
+    public bool FacingLeft = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
