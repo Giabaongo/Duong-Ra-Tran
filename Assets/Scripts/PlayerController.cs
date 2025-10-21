@@ -20,7 +20,18 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnEnable()
     {
-        playerControls.Enable();
+        if (playerControls != null)
+        {
+            playerControls.Enable();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (playerControls != null)
+        {
+            playerControls.Disable();
+        }
     }
 
     private void Update()
@@ -43,8 +54,11 @@ public class NewBehaviourScript : MonoBehaviour
     {
         movement = playerControls.Movement.Move.ReadValue<Vector2>();
 
-        myAnimator.SetFloat("moveX", movement.x);
-        myAnimator.SetFloat("moveY", movement.y);
+        if (myAnimator != null)
+        {
+            myAnimator.SetFloat("moveX", movement.x);
+            myAnimator.SetFloat("moveY", movement.y);
+        }
     }
 
     private void AdjustPlayerFacingDirection()
@@ -52,13 +66,16 @@ public class NewBehaviourScript : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.localPosition);
 
-        if (mousePos.x < playerScreenPoint.x)
+        if (mySpriteRenderer != null)
         {
-            mySpriteRenderer.flipX = true;
-        }
-        else
-        {
-            mySpriteRenderer.flipX = false;
+            if (mousePos.x < playerScreenPoint.x)
+            {
+                mySpriteRenderer.flipX = true;
+            }
+            else
+            {
+                mySpriteRenderer.flipX = false;
+            }
         }
     }
 
