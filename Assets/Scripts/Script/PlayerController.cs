@@ -18,58 +18,91 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody2D không tìm thấy trên Player! Thêm Rigidbody2D component vào Player GameObject.");
+        }
+        else
+        {
+            // Đảm bảo Rigidbody2D được cấu hình đúng
+            rb.gravityScale = 0f; // Tắt gravity cho game top-down
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Không cho xoay
+            Debug.Log("PlayerController initialized successfully!");
+        }
+
+        if (animator == null)
+        {
+            Debug.LogWarning("Animator không tìm thấy trên Player!");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        // Lấy input từ bàn phím (WASD hoặc Arrow keys)
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        moveInput = new Vector2(horizontal, vertical);
 
-        rb.linearVelocity = moveInput.normalized * Movespeed;
-
+        // Debug để kiểm tra input
         if (moveInput.magnitude > 0)
         {
-            animator.SetBool("IsRunning", true);
-
-
+            Debug.Log($"Move Input: {moveInput} | Velocity: {rb.linearVelocity}");
         }
-        else
+
+        // Áp dụng movement cho Rigidbody2D
+        if (rb != null)
         {
-            animator.SetBool("IsRunning", false);
+            rb.linearVelocity = moveInput.normalized * Movespeed;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        // Cập nhật animation
+        if (animator != null)
         {
-            animator.SetBool("IsAttacking", true);
-        }
-        else
-        {
-            animator.SetBool("IsAttacking", false);
+            if (moveInput.magnitude > 0)
+            {
+                animator.SetBool("IsRunning", true);
+            }
+            else
+            {
+                animator.SetBool("IsRunning", false);
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                animator.SetBool("IsAttacking", true);
+            }
+            else
+            {
+                animator.SetBool("IsAttacking", false);
+            }
         }
 
-        // Xoay nh�n v?t theo h??ng con tr? chu?t
+        // Xoay nhân vật theo hướng con trỏ chuột
         RotateTowardsMouse();
     }
 
     void RotateTowardsMouse()
     {
-        // L?y v? tr� con tr? chu?t trong th? gi?i game
+        // Lấy vị trí con trỏ chuột trong thế giới game
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
 
-        // T�nh h??ng t? nh�n v?t ??n con tr? chu?t
+        // Tính hướng từ nhân vật đến con trỏ chuột
         Vector2 direction = (mousePosition - transform.position).normalized;
 
-        // Flip sprite theo h??ng tr�i/ph?i
+        // Flip sprite theo hướng trái/phải
         if (direction.x > 0)
         {
-            // Quay ph?i
+            // Quay phải
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            FacingLeft = false;
         }
         else if (direction.x < 0)
         {
-            // Quay tr�i
+            // Quay trái
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            FacingLeft = true;
         }
     }
 
