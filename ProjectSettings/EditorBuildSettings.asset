@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: cad2a2905afdce244821f32cb1b8fc25
+  - enabled: 1
+    path: Assets/Scenes/Map2.unity
+    guid: 864b4061ad952db47932028e31d684e6
+  - enabled: 1
+    path: Assets/Scenes/ChonMan.unity
+    guid: 165691134e7621b4c92f9c94112862af
   m_configObjects: {}
