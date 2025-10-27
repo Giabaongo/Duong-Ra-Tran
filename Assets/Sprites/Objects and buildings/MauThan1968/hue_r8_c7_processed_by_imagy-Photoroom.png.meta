@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 046a940c573e0c84996a6b6609765822
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7810595040230990879
+    second: hue_r8_c7_processed_by_imagy-Photoroom_0
+  - first:
+      213: 651686916327351732
+    second: hue_r8_c7_processed_by_imagy-Photoroom_1
+  - first:
+      213: -3042564650239956371
+    second: hue_r8_c7_processed_by_imagy-Photoroom_2
+  - first:
+      213: 4708983839496822267
+    second: hue_r8_c7_processed_by_imagy-Photoroom_3
+  - first:
+      213: 3192246625018584955
+    second: hue_r8_c7_processed_by_imagy-Photoroom_4
+  - first:
+      213: 5935462816140175581
+    second: hue_r8_c7_processed_by_imagy-Photoroom_5
+  - first:
+      213: -3794901858448642548
+    second: hue_r8_c7_processed_by_imagy-Photoroom_6
+  - first:
+      213: -3777247296179960145
+    second: hue_r8_c7_processed_by_imagy-Photoroom_7
+  - first:
+      213: -4984193935477802648
+    second: hue_r8_c7_processed_by_imagy-Photoroom_8
+  - first:
+      213: -8605448121049372191
+    second: hue_r8_c7_processed_by_imagy-Photoroom_9
+  - first:
+      213: 5702760785805263659
+    second: hue_r8_c7_processed_by_imagy-Photoroom_10
+  - first:
+      213: 6218947339413616063
+    second: hue_r8_c7_processed_by_imagy-Photoroom_11
+  - first:
+      213: 512165414652083490
+    second: hue_r8_c7_processed_by_imagy-Photoroom_12
+  - first:
+      213: 1747998655465232050
+    second: hue_r8_c7_processed_by_imagy-Photoroom_13
+  - first:
+      213: 8519144449864644210
+    second: hue_r8_c7_processed_by_imagy-Photoroom_14
+  - first:
+      213: 4002979476147628834
+    second: hue_r8_c7_processed_by_imagy-Photoroom_15
+  - first:
+      213: 2657578686644022285
+    second: hue_r8_c7_processed_by_imagy-Photoroom_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 109
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1465698ecec46c60800000000000000
+      internalID: 7810595040230990879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 101
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b526703cc14b0900800000000000000
+      internalID: 651686916327351732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 110
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a69402293a6c5d0800000000000000
+      internalID: -3042564650239956371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 98
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd534e4adba95140800000000000000
+      internalID: 4708983839496822267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 96
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f1ca764632d4c20800000000000000
+      internalID: 3192246625018584955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_5
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 21
+        width: 72
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8239ddbfffe5250800000000000000
+      internalID: 5935462816140175581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_6
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 89
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ee2b1bddcc55bc0800000000000000
+      internalID: -3794901858448642548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 63
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa6836ac895849bc0800000000000000
+      internalID: -3777247296179960145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_8
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 71
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8697038e50694dab0800000000000000
+      internalID: -4984193935477802648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_9
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 43
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9accb078e439880800000000000000
+      internalID: -8605448121049372191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 30
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2343fc58b6442f40800000000000000
+      internalID: 5702760785805263659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_11
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 26
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb5fb92e7a32e4650800000000000000
+      internalID: 6218947339413616063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 7
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22df3962bb39b1700800000000000000
+      internalID: 512165414652083490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_13
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 9
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b69dde0483224810800000000000000
+      internalID: 1747998655465232050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_14
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 18
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2763c64adb41a3670800000000000000
+      internalID: 8519144449864644210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b65f6ff907d8730800000000000000
+      internalID: 4002979476147628834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hue_r8_c7_processed_by_imagy-Photoroom_16
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 2
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0ce01c2cbd91e420800000000000000
+      internalID: 2657578686644022285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      hue_r8_c7_processed_by_imagy-Photoroom_0: 7810595040230990879
+      hue_r8_c7_processed_by_imagy-Photoroom_1: 651686916327351732
+      hue_r8_c7_processed_by_imagy-Photoroom_10: 5702760785805263659
+      hue_r8_c7_processed_by_imagy-Photoroom_11: 6218947339413616063
+      hue_r8_c7_processed_by_imagy-Photoroom_12: 512165414652083490
+      hue_r8_c7_processed_by_imagy-Photoroom_13: 1747998655465232050
+      hue_r8_c7_processed_by_imagy-Photoroom_14: 8519144449864644210
+      hue_r8_c7_processed_by_imagy-Photoroom_15: 4002979476147628834
+      hue_r8_c7_processed_by_imagy-Photoroom_16: 2657578686644022285
+      hue_r8_c7_processed_by_imagy-Photoroom_2: -3042564650239956371
+      hue_r8_c7_processed_by_imagy-Photoroom_3: 4708983839496822267
+      hue_r8_c7_processed_by_imagy-Photoroom_4: 3192246625018584955
+      hue_r8_c7_processed_by_imagy-Photoroom_5: 5935462816140175581
+      hue_r8_c7_processed_by_imagy-Photoroom_6: -3794901858448642548
+      hue_r8_c7_processed_by_imagy-Photoroom_7: -3777247296179960145
+      hue_r8_c7_processed_by_imagy-Photoroom_8: -4984193935477802648
+      hue_r8_c7_processed_by_imagy-Photoroom_9: -8605448121049372191
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
