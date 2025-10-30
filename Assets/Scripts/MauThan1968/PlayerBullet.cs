@@ -15,21 +15,28 @@ public class PlayerBullet : MonoBehaviour
         // Awake runs BEFORE Start and BEFORE any other scripts can call methods
         rb = GetComponent<Rigidbody2D>();
         
+        // ★ FIX: Set continuous collision detection (prevent tunneling)
+        if (rb != null)
+        {
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        }
+        
         // Debug: Check components
         Collider2D bulletCollider = GetComponent<Collider2D>();
-        Debug.Log($"★ PlayerBullet spawned! Has RB: {rb != null}, Has Collider: {bulletCollider != null}, Is Trigger: {(bulletCollider != null ? bulletCollider.isTrigger : false)}");
+        Debug.Log($"★ PlayerBullet spawned! Has RB: {rb != null}, Has Collider: {bulletCollider != null}, Is Trigger: {(bulletCollider != null ? bulletCollider.isTrigger : false)}, Collision Mode: {(rb != null ? rb.collisionDetectionMode.ToString() : "NULL")}");
         
+        // TEST: Comment out ignore collision để test
         // Ignore collision with player who shot this bullet
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            Collider2D playerCollider = player.GetComponent<Collider2D>();
-            if (playerCollider != null && bulletCollider != null)
-            {
-                Physics2D.IgnoreCollision(bulletCollider, playerCollider);
-                Debug.Log("★ Ignored collision with player");
-            }
-        }
+        // GameObject player = GameObject.FindGameObjectWithTag("Player");
+        // if (player != null)
+        // {
+        //     Collider2D playerCollider = player.GetComponent<Collider2D>();
+        //     if (playerCollider != null && bulletCollider != null)
+        //     {
+        //         Physics2D.IgnoreCollision(bulletCollider, playerCollider);
+        //         Debug.Log("★ Ignored collision with player");
+        //     }
+        // }
         
         // Auto destroy after lifetime
         Destroy(gameObject, lifeTime);
@@ -57,15 +64,20 @@ public class PlayerBullet : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // ★ DEBUG: Log mọi va chạm
+        Debug.Log($"★★★ PLAYER BULLET HIT: {collision.gameObject.name}, Layer: {collision.gameObject.layer} ({LayerMask.LayerToName(collision.gameObject.layer)}), Tag: '{collision.tag}'");
+        
         // Ignore collision with player
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("→ Ignored: Is Player");
             return;
         }
         
         // Ignore collision with other player bullets (check by name)
         if (collision.gameObject.name.Contains("Bullet_Player"))
         {
+            Debug.Log("→ Ignored: Is another player bullet");
             return;
         }
         

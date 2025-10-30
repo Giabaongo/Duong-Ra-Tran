@@ -8,12 +8,22 @@ public class EnemyBullet : MonoBehaviour
     
     void Start()
     {
+        // ★ FIX: Set continuous collision detection (prevent tunneling)
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        }
+        
         // Auto destroy after lifetime
         Destroy(gameObject, lifeTime);
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // ★ DEBUG: Log mọi va chạm
+        Debug.Log($"★★★ ENEMY BULLET HIT: {collision.gameObject.name}, Layer: {collision.gameObject.layer} ({LayerMask.LayerToName(collision.gameObject.layer)}), Tag: '{collision.tag}'");
+        
         // Check if hit player
         if (collision.CompareTag("Player"))
         {
