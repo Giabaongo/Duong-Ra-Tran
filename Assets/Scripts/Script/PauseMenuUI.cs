@@ -27,24 +27,18 @@ public class PauseMenuUI : MonoBehaviour
         HideInstant();
     }
 
-    void HideInstant()
+    public void HideInstant()
     {
-        isPaused = false;
-        Time.timeScale = 1f;
-
-        if (canvasGroup != null)
-        {
-            canvasGroup.alpha = 0f;
-            canvasGroup.interactable = false;
-            canvasGroup.blocksRaycasts = false;
-        }
-
-        gameObject.SetActive(false); // Đảm bảo giao diện bị ẩn hoàn toàn
+        canvasGroup.alpha = 0;
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
+        gameObject.SetActive(true); // Đảm bảo rằng PauseUI vẫn được kích hoạt
     }
 
     public void TogglePause()
     {
-        if (!isPaused)
+        Debug.Log("TogglePause method called"); // Thêm dòng này để kiểm tra
+        if (canvasGroup.alpha == 0)
         {
             ShowPause();
         }
@@ -54,37 +48,24 @@ public class PauseMenuUI : MonoBehaviour
         }
     }
 
-    void ShowPause()
+    public void ShowPause()
     {
-        isPaused = true;
-        Time.timeScale = 0f;
-
-        if (titleText != null) titleText.text = "TẠM DỪNG";
-        if (descText != null) descText.text = "Trận đánh đang tạm dừng.";
-
-        if (canvasGroup != null)
+        Canvas canvas = GetComponent<Canvas>();
+        if (canvas != null)
         {
-            canvasGroup.alpha = 1f; // Hiển thị giao diện
-            canvasGroup.interactable = true; // Cho phép tương tác
-            canvasGroup.blocksRaycasts = true; // Cho phép nhận sự kiện
+            canvas.enabled = true; // Kích hoạt Canvas
         }
-
-        gameObject.SetActive(true); // Hiển thị giao diện
+        canvasGroup.alpha = 1;
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
     }
 
-    void HidePause()
+    public void HidePause()
     {
-        isPaused = false;
-        Time.timeScale = 1f;
-
-        if (canvasGroup != null)
-        {
-            canvasGroup.alpha = 0f; // Ẩn giao diện
-            canvasGroup.interactable = false; // Ngừng tương tác
-            canvasGroup.blocksRaycasts = false; // Ngừng nhận sự kiện
-        }
-
-        gameObject.SetActive(false); // Ẩn giao diện
+        canvasGroup.alpha = 0;
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
+        Debug.Log("Pause menu is now hidden"); // Thêm dòng này để kiểm tra
     }
 
     public void OnResumePressed()
