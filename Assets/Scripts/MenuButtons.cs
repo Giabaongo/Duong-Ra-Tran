@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     // Gọi khi bấm "BẮT ĐẦU CHIẾN DỊCH"
+    public GameObject settingsUI;
     public void StartNewGame()
     {
         Debug.Log("StartNewGame() called - loading ChonMan");
@@ -13,18 +14,57 @@ public class MenuButtons : MonoBehaviour
     // Gọi khi bấm "TIẾP TỤC HÀNH TRÌNH"
     public void ContinueGame()
     {
-        Debug.Log("ContinueGame() called - loading ChonMan (tiếp tục)");
-        SceneManager.LoadScene("ChonMan");
-        // sau này bạn có thể đổi thành load map player đang dở
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.LoadGame(); // Gọi phương thức LoadGame từ GameManager
+            Debug.Log("Continuing game...");
+        }
+        else
+        {
+            Debug.LogError("GameManager instance not found!");
+        }
     }
 
-    // Gọi khi bấm "THIẾT LẬP"
+
     public void OpenSettings()
     {
-        Debug.Log("OpenSettings() called - (chưa làm menu cài đặt)");
-        // TODO: mở popup Settings nếu bạn có UI
+        if (settingsUI != null)
+        {
+            settingsUI.SetActive(true); // Hiển thị giao diện thiết lập
+            Debug.Log("Settings menu opened");
+        }
+        else
+        {
+            Debug.LogError("settingsUI is not assigned in the Inspector!");
+        }
     }
 
+    public void CloseSettings()
+    {
+        if (settingsUI != null)
+        {
+            settingsUI.SetActive(false); // Ẩn giao diện thiết lập
+            Debug.Log("Settings menu closed");
+        }
+        else
+        {
+            Debug.LogError("settingsUI is not assigned in the Inspector!");
+        }
+    }
+
+    public void SetVolume(float volume)
+    {
+        Debug.Log($"Volume set to: {volume}");
+        // Thêm logic để điều chỉnh âm lượng
+        AudioListener.volume = volume;
+    }
+
+    public void ToggleMute(bool isMuted)
+    {
+        Debug.Log($"Mute toggled: {isMuted}");
+        // Thêm logic để bật/tắt âm thanh
+        AudioListener.pause = isMuted;
+    }
     // Gọi khi bấm "RÚT LUI"
     public void QuitGame()
     {
