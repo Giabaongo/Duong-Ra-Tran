@@ -777,7 +777,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -3216,6 +3216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1823125406}
   - component: {fileID: 1823125407}
+  - component: {fileID: 1823125408}
   m_Layer: 0
   m_Name: weaponcollider
   m_TagString: Untagged
@@ -3268,7 +3269,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -3290,6 +3291,19 @@ PolygonCollider2D:
       - {x: 1.7955887, y: -0.2693914}
       - {x: 1.7212998, y: 0.6517902}
   m_UseDelaunayMesh: 0
+--- !u!114 &1823125408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823125405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e014d6e38b1a474c9273e52a610c54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageSource
+  damageAmount: 25
 --- !u!1 &1925682461
 GameObject:
   m_ObjectHideFlags: 0
