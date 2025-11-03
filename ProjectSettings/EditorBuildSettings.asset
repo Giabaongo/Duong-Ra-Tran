@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ChonMan.unity
     guid: 165691134e7621b4c92f9c94112862af
   - enabled: 1
-    path: Assets/Scenes/test.unity
+    path: Assets/Scenes/Map1.unity
     guid: 38f2157586ade814b800aa4a5d5bb56b
   - enabled: 1
     path: Assets/Scenes/Map2.unity
