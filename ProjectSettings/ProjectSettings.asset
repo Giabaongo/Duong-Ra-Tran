@@ -685,11 +685,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 01033aac-c7f5-44be-b7f6-4d6fb49a4f1e
+  cloudProjectId: 303b43a2-fa4c-4030-898e-737174bd0ad8
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: PRU_Game
-  organizationId: phungntkse184112
+  projectName: Duong-Ra-Tran
+  organizationId: giabaongo1
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
