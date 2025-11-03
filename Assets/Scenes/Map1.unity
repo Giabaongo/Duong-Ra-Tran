@@ -283,7 +283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 853, y: 635}
+  m_AnchoredPosition: {x: 861, y: 472}
   m_SizeDelta: {x: 95, y: 65}
   m_Pivot: {x: 0.30449462, y: 0.49999997}
 --- !u!114 &44449013
@@ -1722,7 +1722,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
-  orthographic: 1
+  orthographic: 0
   orthographic size: 2
   m_Depth: -1
   m_CullingMask:
@@ -5712,5 +5712,5 @@ SceneRoots:
   - {fileID: 187932104}
   - {fileID: 1182776915}
   - {fileID: 835695638}
-  - {fileID: 1925682463}
   - {fileID: 2110190726}
+  - {fileID: 1925682463}
