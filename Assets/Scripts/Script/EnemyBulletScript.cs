@@ -32,7 +32,16 @@ public class EnemyBulletScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerHealth>().health -= 10;
+            PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(10);
+                Debug.Log("Enemy bullet hit player!");
+            }
+            else
+            {
+                Debug.LogWarning("Player doesn't have PlayerHealth component!");
+            }
             Destroy(gameObject);
         }
     }

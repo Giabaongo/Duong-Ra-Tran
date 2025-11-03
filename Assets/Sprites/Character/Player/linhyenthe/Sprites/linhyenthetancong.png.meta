@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: c6018a75ff70a0741afcced92c84be2a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4526702735404457583
+    second: linhyenthetancong_0
+  - first:
+      213: -7754305254401828799
+    second: linhyenthetancong_1
+  - first:
+      213: 784409150976294523
+    second: linhyenthetancong_2
+  - first:
+      213: 5885885206348676929
+    second: linhyenthetancong_3
+  - first:
+      213: 4198191975115522843
+    second: linhyenthetancong_4
+  - first:
+      213: 1348583328352372980
+    second: linhyenthetancong_5
+  - first:
+      213: 967344059984602731
+    second: linhyenthetancong_6
+  - first:
+      213: -7476267620577605370
+    second: linhyenthetancong_7
+  - first:
+      213: 2376226501935278387
+    second: linhyenthetancong_8
+  - first:
+      213: -2541321448670171192
+    second: linhyenthetancong_9
+  - first:
+      213: -5517117149542157658
+    second: linhyenthetancong_10
+  - first:
+      213: 5451581752597389568
+    second: linhyenthetancong_11
+  - first:
+      213: 7530066615600959800
+    second: linhyenthetancong_12
+  - first:
+      213: 722164997272957824
+    second: linhyenthetancong_13
+  - first:
+      213: 1786082253942590417
+    second: linhyenthetancong_14
+  - first:
+      213: 4202414437539422768
+    second: linhyenthetancong_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: linhyenthetancong_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 267
+        width: 94
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 191ad6c78dbed21c0800000000000000
+      internalID: -4526702735404457583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 267
+        width: 138
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1481f67847c236490800000000000000
+      internalID: -7754305254401828799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 267
+        width: 154
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ef18287f7c2ea00800000000000000
+      internalID: 784409150976294523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_3
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 267
+        width: 145
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14fb321196ddea150800000000000000
+      internalID: 5885885206348676929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_4
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 267
+        width: 153
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1308afbb59f24a30800000000000000
+      internalID: 4198191975115522843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_5
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 267
+        width: 121
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8057c546127b210800000000000000
+      internalID: 1348583328352372980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_6
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 267
+        width: 117
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6667fe1c42bc6d00800000000000000
+      internalID: 967344059984602731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_7
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 267
+        width: 137
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60987b5c536fe3890800000000000000
+      internalID: -7476267620577605370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_8
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 45
+        width: 98
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339a8b9e96d0af020800000000000000
+      internalID: 2376226501935278387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_9
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 45
+        width: 122
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cfeeef5b996bbcd0800000000000000
+      internalID: -2541321448670171192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_10
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 45
+        width: 135
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2f255fe234f63b0800000000000000
+      internalID: -5517117149542157658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_11
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 45
+        width: 130
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001a19368b8e7ab40800000000000000
+      internalID: 5451581752597389568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_12
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 45
+        width: 143
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8315cedd0bb208860800000000000000
+      internalID: 7530066615600959800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_13
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 45
+        width: 143
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 083fca32d35a50a00800000000000000
+      internalID: 722164997272957824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_14
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 45
+        width: 153
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db80edc85079c810800000000000000
+      internalID: 1786082253942590417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: linhyenthetancong_15
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 45
+        width: 117
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032a2846aa9f15a30800000000000000
+      internalID: 4202414437539422768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 86f33b9d943407945bda54150d853774
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      linhyenthetancong_0: -4526702735404457583
+      linhyenthetancong_1: -7754305254401828799
+      linhyenthetancong_10: -5517117149542157658
+      linhyenthetancong_11: 5451581752597389568
+      linhyenthetancong_12: 7530066615600959800
+      linhyenthetancong_13: 722164997272957824
+      linhyenthetancong_14: 1786082253942590417
+      linhyenthetancong_15: 4202414437539422768
+      linhyenthetancong_2: 784409150976294523
+      linhyenthetancong_3: 5885885206348676929
+      linhyenthetancong_4: 4198191975115522843
+      linhyenthetancong_5: 1348583328352372980
+      linhyenthetancong_6: 967344059984602731
+      linhyenthetancong_7: -7476267620577605370
+      linhyenthetancong_8: 2376226501935278387
+      linhyenthetancong_9: -2541321448670171192
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
