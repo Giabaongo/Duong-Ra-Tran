@@ -8,12 +8,17 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (health <= 0)
-            health = maxHealth;
+        health = maxHealth; // Khởi tạo máu đầy
             
         if (healthBar == null)
         {
-            Debug.LogWarning("HealthBar Image chưa được assign trong Inspector!");
+            Debug.LogError("❌ HealthBar Image chưa được assign trong Inspector!");
+        }
+        else
+        {
+            Debug.Log("✅ HealthBar Image đã được assign! Khởi tạo thanh máu...");
+            healthBar.fillAmount = 1f; // Set đầy máu
+            Debug.Log("Current HP: " + health + "/" + maxHealth + " | FillAmount: " + healthBar.fillAmount);
         }
     }
 
@@ -22,7 +27,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (healthBar != null)
         {
-            healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+            float newFillAmount = Mathf.Clamp01(health / maxHealth);
+            healthBar.fillAmount = newFillAmount;
         }
         
         // Check for death
@@ -36,7 +42,12 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         health = Mathf.Max(health, 0); // Không để health < 0
-        Debug.Log("Player took " + damage + " damage. Current HP: " + health);
+        Debug.Log("💔 Player took " + damage + " damage. Current HP: " + health + "/" + maxHealth);
+        
+        if (healthBar != null)
+        {
+            Debug.Log("📊 HealthBar FillAmount: " + healthBar.fillAmount);
+        }
     }
     
     public void Heal(float amount)
