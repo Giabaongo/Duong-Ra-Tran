@@ -1,0 +1,483 @@
+fileFormatVersion: 2
+guid: 5961b952ea2d05b4d89acbeb2fbbca55
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1941527063319466464
+    second: yenthebithuong_0
+  - first:
+      213: -5050203853010636857
+    second: yenthebithuong_1
+  - first:
+      213: 20718102154169133
+    second: yenthebithuong_2
+  - first:
+      213: 5952882884431734405
+    second: yenthebithuong_3
+  - first:
+      213: -1120290692640713025
+    second: yenthebithuong_4
+  - first:
+      213: -9077840415353591115
+    second: yenthebithuong_5
+  - first:
+      213: 9189829279958966116
+    second: yenthebithuong_6
+  - first:
+      213: 124549275692356969
+    second: yenthebithuong_7
+  - first:
+      213: 1698056104318288493
+    second: yenthebithuong_8
+  - first:
+      213: -7994217362240581790
+    second: yenthebithuong_9
+  - first:
+      213: -8633673007782290390
+    second: yenthebithuong_10
+  - first:
+      213: -4545362358399415457
+    second: yenthebithuong_11
+  - first:
+      213: -6538641634067916003
+    second: yenthebithuong_12
+  - first:
+      213: 652135864434490920
+    second: yenthebithuong_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: yenthebithuong_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 250
+        width: 131
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1d6f2d390b1fa10800000000000000
+      internalID: 1941527063319466464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_1
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 250
+        width: 137
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cfedf15a521ae9b0800000000000000
+      internalID: -5050203853010636857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_2
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 250
+        width: 136
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2bc15f010b994000800000000000000
+      internalID: 20718102154169133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_3
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 250
+        width: 135
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5866e049173ec9250800000000000000
+      internalID: 5952882884431734405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_4
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 250
+        width: 135
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb659f3fc8de370f0800000000000000
+      internalID: -1120290692640713025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_5
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 250
+        width: 138
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ba2a2b1d38050280800000000000000
+      internalID: -9077840415353591115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_6
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 250
+        width: 134
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f10725a05d88f70800000000000000
+      internalID: 9189829279958966116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_7
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 248
+        width: 137
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965dca608ec7ab100800000000000000
+      internalID: 124549275692356969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_8
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 46
+        width: 129
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d62439ab705b09710800000000000000
+      internalID: 1698056104318288493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_9
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 45
+        width: 134
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26fc36a0aa5de0190800000000000000
+      internalID: -7994217362240581790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_10
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 46
+        width: 128
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c124084280f2880800000000000000
+      internalID: -8633673007782290390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_11
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 46
+        width: 127
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5bcb247401abe0c0800000000000000
+      internalID: -4545362358399415457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_12
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 46
+        width: 127
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b5dc7b3141245a0800000000000000
+      internalID: -6538641634067916003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yenthebithuong_13
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 45
+        width: 208
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82ef8e01d1adc0900800000000000000
+      internalID: 652135864434490920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: daf29957ea6d61b41af7eb5b3d31eedd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      yenthebithuong_0: 1941527063319466464
+      yenthebithuong_1: -5050203853010636857
+      yenthebithuong_10: -8633673007782290390
+      yenthebithuong_11: -4545362358399415457
+      yenthebithuong_12: -6538641634067916003
+      yenthebithuong_13: 652135864434490920
+      yenthebithuong_2: 20718102154169133
+      yenthebithuong_3: 5952882884431734405
+      yenthebithuong_4: -1120290692640713025
+      yenthebithuong_5: -9077840415353591115
+      yenthebithuong_6: 9189829279958966116
+      yenthebithuong_7: 124549275692356969
+      yenthebithuong_8: 1698056104318288493
+      yenthebithuong_9: -7994217362240581790
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,7 +4,6 @@ using System.Collections;
 
 namespace TMPro.Examples
 {
-
     public class Benchmark01 : MonoBehaviour
     {
 
@@ -60,9 +59,8 @@ namespace TMPro.Examples
                 //m_textMeshPro.fontColor = new Color32(255, 255, 255, 255);
 
                 m_material01 = m_textMeshPro.font.material;
+
                 m_material02 = Resources.Load<Material>("Fonts & Materials/LiberationSans SDF - Drop Shadow"); // Make sure the LiberationSans SDF exists before calling this...
-
-
             }
             else if (BenchmarkType == 1) // TextMesh
             {
