@@ -160,22 +160,37 @@ public class LinhGiaiPhong1968 : MonoBehaviour
         // Calculate shoot direction based on facing direction
         Vector2 shootDirection = facingRight ? Vector2.right : Vector2.left;
         
-        // If fire point exists, use it, otherwise use player position
-        Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position;
+        // If fire point exists, use it, otherwise use player position with offset
+        Vector3 spawnPos;
+        if (firePoint != null)
+        {
+            spawnPos = firePoint.position;
+        }
+        else
+        {
+            // Spawn bullet 0.5 units away from player to avoid collision
+            spawnPos = transform.position + (Vector3)shootDirection * 0.5f;
+        }
         
         // Spawn bullet
         GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
         Debug.Log($"★ PLAYER BULLET spawned at {spawnPos}, scale: {bullet.transform.localScale}");
         
-        // Set bullet direction using PlayerBullet script
-        PlayerBullet playerBullet = bullet.GetComponent<PlayerBullet>();
+        // Set bullet direction using PlayerBullet1968 script
+        PlayerBullet1968 playerBullet = bullet.GetComponent<PlayerBullet1968>();
         if (playerBullet != null)
         {
-            playerBullet.SetDirection(shootDirection);
+            // PlayerBullet1968 tự động bay trong Start(), chỉ cần rotate hướng
+            if (shootDirection == Vector2.left)
+            {
+                bullet.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
+            Debug.Log($"[LinhGiaiPhong1968] PlayerBullet1968 found, direction set to {shootDirection}");
         }
         else
         {
-            // Fallback: use Rigidbody2D if PlayerBullet script is not attached
+            Debug.LogWarning("[LinhGiaiPhong1968] PlayerBullet1968 component NOT FOUND on bullet!");
+            // Fallback: use Rigidbody2D if PlayerBullet1968 script is not attached
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
             if (bulletRb != null)
             {

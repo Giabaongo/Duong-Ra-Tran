@@ -24,6 +24,17 @@ public class EnemyBullet : MonoBehaviour
         // ★ DEBUG: Log mọi va chạm
         Debug.Log($"★★★ ENEMY BULLET HIT: {collision.gameObject.name}, Layer: {collision.gameObject.layer} ({LayerMask.LayerToName(collision.gameObject.layer)}), Tag: '{collision.tag}'");
         
+        // IGNORE: Không va chạm với Enemy, EnemyBullet, PlayerBullet
+        if (collision.CompareTag("Enemy") || 
+            collision.CompareTag("EnemyBullet") ||
+            collision.CompareTag("PlayerBullet") ||
+            collision.gameObject.name.Contains("Enemy") ||
+            collision.gameObject.name.Contains("Bullet"))
+        {
+            Debug.Log($"[EnemyBullet] ⚪ Ignoring collision with: {collision.gameObject.name}");
+            return; // Bỏ qua, không làm gì
+        }
+        
         // Check if hit player
         if (collision.CompareTag("Player"))
         {
@@ -32,15 +43,16 @@ public class EnemyBullet : MonoBehaviour
             if (player != null)
             {
                 player.TakeDamage(damage);
-                Debug.Log("Enemy bullet hit player!");
+                Debug.Log("[EnemyBullet] ⚔️ Hit player, dealing damage!");
             }
             
             // Destroy bullet
             Destroy(gameObject);
         }
-        // Destroy if hit wall or obstacle (check if tag exists first)
-        else if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Obstacle")
+        // Destroy if hit wall or obstacle
+        else
         {
+            Debug.Log($"[EnemyBullet] 🧱 Hit obstacle: {collision.gameObject.name}, destroying bullet");
             Destroy(gameObject);
         }
     }
