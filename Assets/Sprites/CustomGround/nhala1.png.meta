@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,16 +100,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nhala1_0
+      name: nhala1_bottom
       rect:
         serializedVersion: 2
-        x: 20
+        x: 22
         y: 17
-        width: 189
-        height: 146
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        width: 187
+        height: 144
+      alignment: 9
+      pivot: {x: 0.49639115, y: 0.13600779}
+      border: {x: 0, y: 0, z: 0, w: 80}
       customData: 
       outline: []
       physicsShape: []
@@ -121,11 +121,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: nhala1_head
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 82
+        width: 186
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158fafa0392d9ab49bb18e6bfdffa5ef
+      internalID: 1514518940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2c0c5201deefe6e4bbed4244e73de4ad
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +157,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      nhala1_0: -2360114395717021056
+      nhala1_bottom: -2360114395717021056
+      nhala1_head: 1514518940
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

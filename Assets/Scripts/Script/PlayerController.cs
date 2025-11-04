@@ -1,18 +1,17 @@
+// 04/11/2025 AI-Tag
+// This was created with the help of Assistant, a Unity Artificial Intelligence product.
+
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
-
     public float Movespeed = 2f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Animator animator;
 
-
     public bool FacingLeft = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,7 +23,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // Đảm bảo Rigidbody2D được cấu hình đúng
             rb.gravityScale = 0f; // Tắt gravity cho game top-down
             rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Không cho xoay
             Debug.Log("PlayerController initialized successfully!");
@@ -36,19 +34,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Lấy input từ bàn phím (WASD hoặc Arrow keys)
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         moveInput = new Vector2(horizontal, vertical);
-
-        // Debug để kiểm tra input
-        if (moveInput.magnitude > 0)
-        {
-            Debug.Log($"Move Input: {moveInput} | Velocity: {rb.linearVelocity}");
-        }
 
         // Áp dụng movement cho Rigidbody2D
         if (rb != null)
@@ -57,56 +48,69 @@ public class PlayerController : MonoBehaviour
         }
 
         // Cập nhật animation
+        UpdateAnimation();
+
+        // Xoay nhân vật theo hướng di chuyển hoặc con trỏ chuột
+        AdjustFacingDirection();
+    }
+
+    private void UpdateAnimation()
+    {
         if (animator != null)
         {
-            if (moveInput.magnitude > 0)
-            {
-                animator.SetBool("IsRunning", true);
-            }
-            else
-            {
-                animator.SetBool("IsRunning", false);
-            }
+            animator.SetBool("IsRunning", moveInput.magnitude > 0);
 
             if (Input.GetMouseButtonDown(0))
             {
                 animator.SetBool("IsAttacking", true);
+                RotateTowardsMouse(); // Xoay nhân vật theo hướng chuột khi tấn công
             }
             else
             {
                 animator.SetBool("IsAttacking", false);
             }
         }
-
-        // Xoay nhân vật theo hướng con trỏ chuột
-        RotateTowardsMouse();
     }
 
-    void RotateTowardsMouse()
+    private void AdjustFacingDirection()
     {
-        // Lấy vị trí con trỏ chuột trong thế giới game
+        if (moveInput.magnitude > 0)
+        {
+            // Quay mặt theo hướng phím di chuyển
+            if (moveInput.x > 0)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                FacingLeft = false;
+            }
+            else if (moveInput.x < 0)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                FacingLeft = true;
+            }
+        }
+        else
+        {
+            // Nếu không di chuyển, quay mặt theo hướng chuột
+            RotateTowardsMouse();
+        }
+    }
+
+    private void RotateTowardsMouse()
+    {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
 
-        // Tính hướng từ nhân vật đến con trỏ chuột
         Vector2 direction = (mousePosition - transform.position).normalized;
 
-        // Flip sprite theo hướng trái/phải
         if (direction.x > 0)
         {
-            // Quay phải
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             FacingLeft = false;
         }
         else if (direction.x < 0)
         {
-            // Quay trái
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             FacingLeft = true;
         }
     }
-
-
-
-
 }
