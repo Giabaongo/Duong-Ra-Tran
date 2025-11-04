@@ -16,20 +16,23 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            Debug.Log("✅ HealthBar Image đã được assign! Khởi tạo thanh máu...");
-            healthBar.fillAmount = 1f; // Set đầy máu
-            Debug.Log("Current HP: " + health + "/" + maxHealth + " | FillAmount: " + healthBar.fillAmount);
+            Debug.Log("✅ HealthBar Image đã được assign!");
+            Debug.Log("   - HealthBar Name: " + healthBar.gameObject.name);
+            Debug.Log("   - HealthBar Type: " + healthBar.type);
+            Debug.Log("   - HealthBar FillMethod: " + healthBar.fillMethod);
+            UpdateHealthBar();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (healthBar != null)
-        {
-            float newFillAmount = Mathf.Clamp01(health / maxHealth);
-            healthBar.fillAmount = newFillAmount;
-        }
+        // Không cần update mỗi frame nữa vì đã update trong TakeDamage()
+        // if (healthBar != null)
+        // {
+        //     float newFillAmount = Mathf.Clamp01(health / maxHealth);
+        //     healthBar.fillAmount = newFillAmount;
+        // }
         
         // Check for death
         if (health <= 0)
@@ -44,9 +47,27 @@ public class PlayerHealth : MonoBehaviour
         health = Mathf.Max(health, 0); // Không để health < 0
         Debug.Log("💔 Player took " + damage + " damage. Current HP: " + health + "/" + maxHealth);
         
+        // Force update health bar ngay lập tức
+        UpdateHealthBar();
+    }
+    
+    private void UpdateHealthBar()
+    {
         if (healthBar != null)
         {
-            Debug.Log("📊 HealthBar FillAmount: " + healthBar.fillAmount);
+            float newFillAmount = Mathf.Clamp01(health / maxHealth);
+            healthBar.fillAmount = newFillAmount;
+            
+            Debug.Log("📊 Updating HealthBar:");
+            Debug.Log("   - Health: " + health + "/" + maxHealth);
+            Debug.Log("   - Calculated FillAmount: " + newFillAmount);
+            Debug.Log("   - Actual FillAmount: " + healthBar.fillAmount);
+            Debug.Log("   - HealthBar GameObject: " + healthBar.gameObject.name);
+            Debug.Log("   - HealthBar Active: " + healthBar.gameObject.activeInHierarchy);
+        }
+        else
+        {
+            Debug.LogError("❌ HealthBar is NULL! Cannot update!");
         }
     }
     
@@ -54,7 +75,8 @@ public class PlayerHealth : MonoBehaviour
     {
         health += amount;
         health = Mathf.Min(health, maxHealth); // Không để health > maxHealth
-        Debug.Log("Player healed " + amount + ". Current HP: " + health);
+        Debug.Log("💚 Player healed " + amount + ". Current HP: " + health);
+        UpdateHealthBar();
     }
     
     private void Die()
