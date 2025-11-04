@@ -48,13 +48,23 @@ public class EnemyBullet : MonoBehaviour
             
             // Destroy bullet
             Destroy(gameObject);
+            return;
         }
-        // Destroy if hit wall or obstacle
-        else
+        
+        // ★ FIX: Check if hit Wall or Obstacle explicitly
+        if (collision.gameObject.tag == "Wall" || 
+            collision.gameObject.tag == "Obstacle" ||
+            collision.gameObject.name.Contains("Building") ||
+            collision.gameObject.name.Contains("Wall"))
         {
-            Debug.Log($"[EnemyBullet] 🧱 Hit obstacle: {collision.gameObject.name}, destroying bullet");
+            Debug.Log($"[EnemyBullet] 🧱 Hit wall/building: {collision.gameObject.name}, destroying bullet");
             Destroy(gameObject);
+            return;
         }
+        
+        // ★ DEFAULT: Destroy on any other collision (Ground, etc.)
+        Debug.Log($"[EnemyBullet] 🌍 Hit other object: {collision.gameObject.name}, destroying bullet");
+        Destroy(gameObject);
     }
 }
 

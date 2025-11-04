@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8674175143976001330}
   - component: {fileID: 1286540428027575843}
   - component: {fileID: 1134861177012279088}
-  - component: {fileID: 1594810510075503854}
   - component: {fileID: -293779141756558167}
   m_Layer: 0
   m_Name: Bullet_Enemy
@@ -151,28 +150,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.1
---- !u!114 &1594810510075503854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7661165525015956137}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fb0eac69c730645a783cc6d0cd0b95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerBullet1968
-  damage: 10
-  speed: 10
-  lifetime: 5
-  destroyOnImpact: 1
 --- !u!114 &-293779141756558167
 MonoBehaviour:
   m_ObjectHideFlags: 0

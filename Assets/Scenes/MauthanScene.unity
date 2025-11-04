@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7223768965fd24cba6e32ba3c36647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth1968
-  maxHealth: 50
+  maxHealth: 20
   spriteRenderer: {fileID: 83274322}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.1
@@ -199,7 +199,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7661165525015956137, guid: e1581e470669b174ca3cec9cc9345066, type: 3}
   firePoint: {fileID: 0}
   shootCooldown: 2
-  bulletSpeed: 10
+  bulletSpeed: 6
+  initialAttackDelay: 1
+  maxBlockedTime: 2
+  giveUpCooldown: 5
 --- !u!50 &83274319
 Rigidbody2D:
   serializedVersion: 5
@@ -933,7 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7223768965fd24cba6e32ba3c36647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth1968
-  maxHealth: 50
+  maxHealth: 20
   spriteRenderer: {fileID: 487092514}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.1
@@ -978,7 +981,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7661165525015956137, guid: e1581e470669b174ca3cec9cc9345066, type: 3}
   firePoint: {fileID: 0}
   shootCooldown: 2
-  bulletSpeed: 10
+  bulletSpeed: 6
+  initialAttackDelay: 1
+  maxBlockedTime: 2
+  giveUpCooldown: 5
 --- !u!50 &487092511
 Rigidbody2D:
   serializedVersion: 5
@@ -1141,7 +1147,7 @@ Transform:
   m_GameObject: {fileID: 487092507}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.87, y: -14.61, z: 0}
+  m_LocalPosition: {x: 2.85, y: -18.84, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1235,7 +1241,7 @@ Transform:
   m_GameObject: {fileID: 548418837}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.365517, y: -7.218814, z: -10}
+  m_LocalPosition: {x: -8.975516, y: -7.158814, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19618,7 +19624,7 @@ Transform:
   m_GameObject: {fileID: 1039792845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.365517, y: -7.218814, z: -10}
+  m_LocalPosition: {x: -8.975516, y: -7.158814, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19713,7 +19719,7 @@ Transform:
   m_GameObject: {fileID: 1079287067}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.94, y: -7.12, z: 0}
+  m_LocalPosition: {x: -10.55, y: -7.06, z: 0}
   m_LocalScale: {x: 0.16, y: 0.166, z: 0.16}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19831,7 +19837,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7317427077978223861, guid: 65e6513bf29199742b85fbbb8fbed38c, type: 3}
   firePoint: {fileID: 0}
   bulletSpeed: 10
-  maxHealth: 5
+  maxHealth: 20
 --- !u!114 &1079287074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19844,7 +19850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab17e6278ab6ea45be1591c1248c14e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth1968
-  maxHealth: 100
+  maxHealth: 200
   currentHealth: 0
   invincibilityTime: 1.5
   spriteRenderer: {fileID: 1079287068}
@@ -20212,7 +20218,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7661165525015956137, guid: e1581e470669b174ca3cec9cc9345066, type: 3}
   firePoint: {fileID: 0}
   shootCooldown: 2
-  bulletSpeed: 10
+  bulletSpeed: 6
+  initialAttackDelay: 1
+  maxBlockedTime: 2
+  giveUpCooldown: 5
 --- !u!114 &1317950672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20240,7 +20249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7223768965fd24cba6e32ba3c36647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth1968
-  maxHealth: 50
+  maxHealth: 20
   spriteRenderer: {fileID: 1317950666}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.1
@@ -20283,7 +20292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7223768965fd24cba6e32ba3c36647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth1968
-  maxHealth: 50
+  maxHealth: 20
   spriteRenderer: {fileID: 1464101269}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.1
@@ -20328,7 +20337,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7661165525015956137, guid: e1581e470669b174ca3cec9cc9345066, type: 3}
   firePoint: {fileID: 0}
   shootCooldown: 2
-  bulletSpeed: 10
+  bulletSpeed: 6
+  initialAttackDelay: 1
+  maxBlockedTime: 2
+  giveUpCooldown: 5
 --- !u!50 &1464101266
 Rigidbody2D:
   serializedVersion: 5
@@ -20609,7 +20621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7223768965fd24cba6e32ba3c36647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth1968
-  maxHealth: 50
+  maxHealth: 20
   spriteRenderer: {fileID: 1512608622}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.1
@@ -20654,7 +20666,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7661165525015956137, guid: e1581e470669b174ca3cec9cc9345066, type: 3}
   firePoint: {fileID: 0}
   shootCooldown: 2
-  bulletSpeed: 10
+  bulletSpeed: 6
+  initialAttackDelay: 1
+  maxBlockedTime: 2
+  giveUpCooldown: 5
 --- !u!50 &1512608619
 Rigidbody2D:
   serializedVersion: 5
@@ -21059,7 +21074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7223768965fd24cba6e32ba3c36647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth1968
-  maxHealth: 50
+  maxHealth: 20
   spriteRenderer: {fileID: 1859753803}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.1
@@ -21104,7 +21119,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7661165525015956137, guid: e1581e470669b174ca3cec9cc9345066, type: 3}
   firePoint: {fileID: 0}
   shootCooldown: 2
-  bulletSpeed: 10
+  bulletSpeed: 6
+  initialAttackDelay: 1
+  maxBlockedTime: 2
+  giveUpCooldown: 5
 --- !u!50 &1859753800
 Rigidbody2D:
   serializedVersion: 5
@@ -21267,7 +21285,7 @@ Transform:
   m_GameObject: {fileID: 1859753796}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.75, y: -14.75, z: 0}
+  m_LocalPosition: {x: -10.5, y: -14.69, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 0
   m_Children: []

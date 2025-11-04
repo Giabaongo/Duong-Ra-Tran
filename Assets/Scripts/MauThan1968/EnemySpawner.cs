@@ -14,20 +14,33 @@ public class EnemySpawner : MonoBehaviour
     
     void Start()
     {
+        // ★★★ COMPLETELY DISABLED ★★★
+        // No enemy spawning at all!
+        // Scene already has 6 enemies placed manually
+        return;
+        
+        /* ORIGINAL CODE (DISABLED):
         if (spawnAtStart && spawnPoints.Length > 0)
         {
             SpawnEnemy();
         }
+        */
     }
     
     void Update()
     {
+        // ★★★ COMPLETELY DISABLED ★★★
+        // No auto-spawn, no respawn!
+        return;
+        
+        /* ORIGINAL CODE (DISABLED):
         // Auto spawn enemies if below max
         if (currentEnemyCount < maxEnemies && 
             Time.time - lastSpawnTime >= spawnInterval)
         {
             SpawnEnemy();
         }
+        */
     }
     
     public void SpawnEnemy()

@@ -78,6 +78,12 @@ public class EnemyHealth1968 : MonoBehaviour
             Debug.Log($"[EnemyHealth] {gameObject.name} HP reached 0, calling Die()...");
             Die();
         }
+        else
+        {
+            // ★ THÊM: Chạy animation HIT nếu chưa chết
+            Debug.Log($"[EnemyHealth] 💥 {gameObject.name} is HIT! Playing hit animation...");
+            PlayHitAnimation();
+        }
     }
     
     private System.Collections.IEnumerator DamageFlash()
@@ -221,6 +227,48 @@ public class EnemyHealth1968 : MonoBehaviour
         // KHÔNG DÙNG - Bullet script tự xử lý
     }
     */
+    
+    private void PlayHitAnimation()
+    {
+        // Get animator
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            // ★ FIX: Force play animation thay vì dùng trigger/bool
+            // Vì Enemy animator không có Any State → EnemyHit transition
+            animator.Play("EnemyHit", 0, 0f);
+            Debug.Log($"[EnemyHealth] ✅ Force playing EnemyHit animation for {gameObject.name}");
+            
+            // Backup: Vẫn set bool để transition work nếu có
+            animator.SetBool("isHitting", true);
+            
+            // Reset hit animation sau 0.35 giây (EnemyHit animation duration)
+            Invoke(nameof(ResetHitAnimation), 0.35f);
+        }
+        else
+        {
+            Debug.LogWarning($"[EnemyHealth] {gameObject.name} has no Animator!");
+        }
+        
+        // Get Enermy1968Controller và dừng enemy trong lúc hit
+        Enermy1968Controller controller = GetComponent<Enermy1968Controller>();
+        if (controller != null)
+        {
+            // Nếu controller có public method/property để set hit state
+            // controller.SetHit(true); // Nếu có method này
+            Debug.Log($"[EnemyHealth] Found Enermy1968Controller on {gameObject.name}");
+        }
+    }
+    
+    private void ResetHitAnimation()
+    {
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetBool("isHitting", false);
+            Debug.Log($"[EnemyHealth] Reset isHitting = false for {gameObject.name}");
+        }
+    }
     
     // Getters
     public int GetCurrentHealth() => currentHealth;

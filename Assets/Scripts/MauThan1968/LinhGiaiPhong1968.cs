@@ -27,7 +27,7 @@ public class LinhGiaiPhong1968 : MonoBehaviour
     private float lastAttackTime = 0f;
 
     [Header("Health")]
-    [SerializeField] private int maxHealth = 5; // Player dies after 5 hits
+    [SerializeField] private int maxHealth = 20; 
     private int currentHealth;
 
     void Start()
@@ -245,12 +245,18 @@ public class LinhGiaiPhong1968 : MonoBehaviour
     // Public method to take damage (called by enemies, bullets, etc.)
     public void TakeDamage(int damage)
     {
-        if (isHit || !IsAlive()) return; // Already taking damage or dead
+        Debug.Log($"[Player] 🎯 TakeDamage called! Damage: {damage}, isHit: {isHit}, IsAlive: {IsAlive()}");
+        
+        if (isHit || !IsAlive())
+        {
+            Debug.LogWarning($"[Player] ⚠️ Cannot take damage - isHit: {isHit}, IsAlive: {IsAlive()}");
+            return; // Already taking damage or dead
+        }
 
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0);
 
-        Debug.Log($"LinhGiaiPhong1968 took {damage} damage! Health: {currentHealth}/{maxHealth}");
+        Debug.Log($"[Player] ⚔️ Player took {damage} damage! Health: {currentHealth}/{maxHealth}");
 
         if (currentHealth <= 0)
         {
@@ -264,6 +270,7 @@ public class LinhGiaiPhong1968 : MonoBehaviour
         }
         else
         {
+            Debug.Log($"[Player] 💥 Starting HIT animation!");
             StartHit();
         }
     }
