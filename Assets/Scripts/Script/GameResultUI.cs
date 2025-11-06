@@ -37,6 +37,12 @@ public class GameResultUI : MonoBehaviour
     public string replaySceneName = "Map1";     // se duoc gan tu dong theo scene
     public string backToSelectScene = "ChonMan"; // quay ve man chon
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip victoryClip;
+    [SerializeField] private AudioClip loseClip;
+    [SerializeField] private float sfxVolume = 1f;
+
     public bool IsShowing { get; private set; }
 
     private bool lastResultWasWin;
@@ -124,6 +130,8 @@ public class GameResultUI : MonoBehaviour
             canvasGroup.blocksRaycasts = true;
             canvasGroup.interactable = true;
         }
+
+        PlayResultSfx(isWin);
     }
 
     // ------------ BUTTON HANDLERS ---------------
@@ -152,5 +160,29 @@ public class GameResultUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void PlayResultSfx(bool isWin)
+    {
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
+        if (audioSource == null)
+        {
+            return;
+        }
+
+        AudioClip clipToPlay = isWin ? victoryClip : loseClip;
+        if (clipToPlay == null)
+        {
+            return;
+        }
+
+        audioSource.Stop();
+        audioSource.clip = clipToPlay;
+        audioSource.volume = sfxVolume;
+        audioSource.Play();
     }
 }

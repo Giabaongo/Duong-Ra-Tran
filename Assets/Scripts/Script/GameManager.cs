@@ -241,12 +241,20 @@ public class GameManager : MonoBehaviour
         if (candidate != null)
         {
             musicSource = candidate;
+
+            if (musicSource.transform.parent == null)
+            {
+                musicSource.transform.SetParent(transform);
+            }
+
             DontDestroyOnLoad(musicSource.gameObject);
 
             if (forceMusicLoop)
             {
                 musicSource.loop = true;
             }
+
+            musicSource.playOnAwake = false;
 
             if (!musicSource.isPlaying)
             {

@@ -122,4 +122,13 @@ public class PlayerController : MonoBehaviour
         localScale.x = newScaleX;
         transform.localScale = localScale;
     }
+
+    public void FaceTowardsWorld(Vector3 worldPosition)
+    {
+        Vector2 direction = worldPosition - transform.position;
+        if (Mathf.Abs(direction.x) > 0.01f)
+        {
+            SetFacingLeft(direction.x < 0f);
+        }
+    }
 }

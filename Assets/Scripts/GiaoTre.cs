@@ -5,6 +5,9 @@ public class GiaoTre : MonoBehaviour
     [SerializeField] private GameObject SlashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private Transform weaponCollider;
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip attackSwingClip;
 
     private PlayerControls playerControls;
     private PlayerController playerController;
@@ -26,6 +29,10 @@ public class GiaoTre : MonoBehaviour
 
         playerControls = new PlayerControls();
         playerController = GetComponent<PlayerController>();
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
         if (playerController == null)
         {
             Debug.LogError("PlayerController component không tìm thấy trên " + gameObject.name);
@@ -115,6 +122,18 @@ public class GiaoTre : MonoBehaviour
             myAnimator.SetTrigger("Attack");
         }
 
+        if (playerController != null)
+        {
+            Camera cam = Camera.main;
+            if (cam != null)
+            {
+                Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
+                mouseWorld.z = transform.position.z;
+                playerController.FaceTowardsWorld(mouseWorld);
+                UpdateFacingAttachments();
+            }
+        }
+
         if (weaponCollider != null)
         {
             weaponCollider.gameObject.SetActive(true);
@@ -125,6 +144,7 @@ public class GiaoTre : MonoBehaviour
             }
         }
 
+        PlayAttackSound();
         Invoke(nameof(ForceDeactivateWeapon), 0.3f);
     }
 
@@ -202,5 +222,14 @@ public class GiaoTre : MonoBehaviour
             slashAnimSpawnPoint.localPosition = localPos;
         }
     }
-}
 
+    private void PlayAttackSound()
+    {
+        if (audioSource == null || attackSwingClip == null)
+        {
+            return;
+        }
+
+        audioSource.PlayOneShot(attackSwingClip);
+    }
+}

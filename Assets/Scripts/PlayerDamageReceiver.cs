@@ -8,6 +8,11 @@ public class PlayerDamageReceiver : MonoBehaviour
     [Header("References")]
     [SerializeField] private PlayerHealth playerHealth;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip hitClip;
+    [SerializeField] private float hitVolume = 1f;
+
     private void Awake()
     {
         if (playerHealth == null)
@@ -17,7 +22,17 @@ public class PlayerDamageReceiver : MonoBehaviour
 
         if (playerHealth == null)
         {
-            Debug.LogError("PlayerDamageReceiver: không tìm thấy PlayerHealth!");
+            Debug.LogError("PlayerDamageReceiver: missing PlayerHealth reference!");
+        }
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponentInParent<AudioSource>();
         }
     }
 
@@ -30,6 +45,7 @@ public class PlayerDamageReceiver : MonoBehaviour
             {
                 float damage = bullet != null ? bullet.DamageAmount : 10f;
                 playerHealth.TakeDamage(damage);
+                PlayHitSound();
             }
             else
             {
@@ -43,8 +59,31 @@ public class PlayerDamageReceiver : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damageSource.DamageAmount);
+                PlayHitSound();
             }
         }
     }
-}
 
+    private void PlayHitSound()
+    {
+        if (hitClip == null)
+        {
+            return;
+        }
+
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(hitClip, hitVolume);
+            return;
+        }
+
+        GameObject temp = new GameObject("PlayerHitTempAudio");
+        temp.transform.position = transform.position;
+        AudioSource tempSource = temp.AddComponent<AudioSource>();
+        tempSource.clip = hitClip;
+        tempSource.volume = hitVolume;
+        tempSource.spatialBlend = 0f;
+        tempSource.Play();
+        Destroy(temp, hitClip.length);
+    }
+}
