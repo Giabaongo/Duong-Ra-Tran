@@ -16,7 +16,7 @@ public class MenuButtons : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.LoadGame(); // Gọi phương thức LoadGame từ GameManager
+           // GameManager.Instance.LoadGame(); // Gọi phương thức LoadGame từ GameManager
             Debug.Log("Continuing game...");
         }
         else

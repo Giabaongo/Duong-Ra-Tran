@@ -5,6 +5,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float health = 100f;
     public Image healthBar;
+
+    // Thêm public property để truy cập health
+    public float CurrentHealth => health;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -82,6 +86,21 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player died!");
-        // TODO: Implement death logic (game over screen, respawn, etc.)
+
+        // Tạm dừng game
+        Time.timeScale = 0f;
+
+        // Hiển thị màn hình thua nếu có GameResultUI
+        if (GameManager.Instance != null && GameManager.Instance.gameResultUI != null)
+        {
+            if (!GameManager.Instance.gameResultUI.IsShowing)
+            {
+                GameManager.Instance.gameResultUI.ShowLose();
+            }
+        }
+        else
+        {
+            Debug.LogWarning("[PlayerHealth] Không tìm thấy GameManager hoặc GameResultUI. Không thể hiển thị màn hình thua.");
+        }
     }
 }

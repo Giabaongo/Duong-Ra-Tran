@@ -51,7 +51,20 @@ public class MissionSelectUI : MonoBehaviour
 
         string sceneName = selectedNode.missionName;
         Debug.Log("Bắt đầu nhiệm vụ: " + sceneName);
-        SceneManager.LoadScene(sceneName);
+        StoryPayload.Set(sceneName, selectedNode.storyTitle, selectedNode.storyDescription);
+
+        string storyScene = "StoryScene";
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.QueueMission(sceneName, selectedNode.storyTitle, selectedNode.storyDescription);
+
+            if (!string.IsNullOrEmpty(GameManager.Instance.StorySceneName))
+            {
+                storyScene = GameManager.Instance.StorySceneName;
+            }
+        }
+
+        SceneManager.LoadScene(storyScene);
     }
 
     public void BackToMenu()
