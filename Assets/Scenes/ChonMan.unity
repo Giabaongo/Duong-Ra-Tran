@@ -752,6 +752,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281311008}
   m_CullTransparentMesh: 1
+--- !u!1 &303780519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 303780520}
+  - component: {fileID: 303780522}
+  - component: {fileID: 303780521}
+  m_Layer: 5
+  m_Name: LockIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &303780520
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303780519}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0001242, y: 1.0001242, z: 1.0001242}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091248139}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 283.6, y: -3.5}
+  m_SizeDelta: {x: 41.74, y: 33.98}
+  m_Pivot: {x: -0.24436061, y: 1.5572155}
+--- !u!114 &303780521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303780519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 93a1fc515919333458a6886b8b4892a4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &303780522
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303780519}
+  m_CullTransparentMesh: 1
 --- !u!1 &496384147
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,24 +960,21 @@ MonoBehaviour:
   displayTitle: "T\u1EBFt M\u1EADu Th\xE2n (1968) "
   objective: "Qu\xE2n M\u1EF9 & VNCH, trang b\u1ECB hi\u1EC7n \u0111\u1EA1i. "
   difficulty: "Kh\xF3"
-  storyTitle: "Chi\u1EBFn th\u1EAFng \u0110i\u1EC7n Bi\xEAn Ph\u1EE7 (1954)"
-  storyDescription: "M\xF9a xu\xE2n n\u0103m 1954, tr\xEAn chi\u1EBFn tr\u01B0\u1EDDng
-    \u0110i\u1EC7n Bi\xEAn Ph\u1EE7 \u2013 thung l\u0169ng gi\u1EEFa n\xFAi r\u1EEBng
-    T\xE2y B\u1EAFc \u2013 qu\xE2n d\xE2n Vi\u1EC7t Nam m\u1EDF tr\u1EADn quy\u1EBFt
-    chi\u1EBFn l\u1ECBch s\u1EED ch\u1ED1ng th\u1EF1c d\xE2n Ph\xE1p.\nTrong m\u01B0a
-    ph\xF9n, b\xF9n \u0111\u1EA5t v\xE0 h\u1EA7m h\xE0o ch\u1EB1ng ch\u1ECBt, b\u1ED9
-    \u0111\u1ED9i Vi\u1EC7t Minh v\u01B0\u1EE3t n\xFAi, k\xE9o ph\xE1o, bao v\xE2y
-    t\u1EADp \u0111o\xE0n c\u1EE9 \u0111i\u1EC3m m\u1EA1nh nh\u1EA5t \u0110\xF4ng
-    D\u01B0\u01A1ng.\nPh\xE1o binh Vi\u1EC7t Minh n\xE3 \u0111\u1EA1n d\u1ED3n d\u1EADp,
-    t\u1EEBng \u0111\u1ED3i, t\u1EEBng h\u1EA7m h\xE0o c\u1EE7a \u0111\u1ECBch l\u1EA7n
-    l\u01B0\u1EE3t b\u1ECB \u0111\xE1nh chi\u1EBFm.\nQu\xE2n Ph\xE1p ch\u1ED1ng tr\u1EA3
-    b\u1EB1ng ph\xE1o, xe t\u0103ng v\xE0 m\xE1y bay, nh\u01B0ng b\u1ECB c\xF4 l\u1EADp
-    gi\u1EEFa v\xF2ng v\xE2y th\xE9p.\nSau 56 ng\xE0y \u0111\xEAm chi\u1EBFn \u0111\u1EA5u
-    \xE1c li\u1EC7t, t\u1EADp \u0111o\xE0n c\u1EE9 \u0111i\u1EC3m \u0110i\u1EC7n
-    Bi\xEAn Ph\u1EE7 b\u1ECB ti\xEAu di\u1EC7t ho\xE0n to\xE0n.\nChi\u1EBFn th\u1EAFng
-    n\xE0y ch\u1EA5n \u0111\u1ED9ng \u0111\u1ECBa c\u1EA7u, bu\u1ED9c Ph\xE1p ph\u1EA3i
-    k\xFD Hi\u1EC7p \u0111\u1ECBnh Gen\xE8ve, m\u1EDF ra th\u1EDDi k\u1EF3 \u0111\u1ED9c
-    l\u1EADp cho n\u1EEDa \u0111\u1EA5t n\u01B0\u1EDBc Vi\u1EC7t Nam."
+  storyTitle: "Chi\u1EBFn th\u1EAFng M\u1EADu Th\xE2n (1968)"
+  storyDescription: "N\u0103m 1968, chi\u1EBFn tranh Vi\u1EC7t Nam b\u01B0\u1EDBc
+    sang m\u1ED9t b\u01B0\u1EDBc ngo\u1EB7t quan tr\u1ECDng v\u1EDBi Cu\u1ED9c t\u1EA5n
+    c\xF4ng T\u1EBFt M\u1EADu Th\xE2n. Qu\xE2n Gi\u1EA3i ph\xF3ng mi\u1EC1n Nam Vi\u1EC7t
+    Nam ph\u1ED1i h\u1EE3p v\u1EDBi qu\xE2n \u0111\u1ED9i B\u1EAFc Vi\u1EC7t Nam
+    ti\u1EBFn h\xE0nh t\u1ED5ng t\u1EA5n c\xF4ng v\xE0o h\u01A1n 100 th\xE0nh ph\u1ED1
+    v\xE0 c\u0103n c\u1EE9 qu\xE2n s\u1EF1 M\u1EF9, g\xE2y b\u1EA5t ng\u1EDD l\u1EDBn.
+    M\u1EB7c d\xF9 kh\xF4ng ho\xE0n to\xE0n \u0111\u1EA1t \u0111\u01B0\u1EE3c m\u1EE5c
+    ti\xEAu qu\xE2n s\u1EF1, chi\u1EBFn d\u1ECBch M\u1EADu Th\xE2n \u0111\xE3 thay
+    \u0111\u1ED5i chi\u1EBFn l\u01B0\u1EE3c v\xE0 l\xE0m ch\u1EA5n \u0111\u1ED9ng
+    d\u01B0 lu\u1EADn M\u1EF9, \u0111\u1EA9y cu\u1ED9c chi\u1EBFn v\xE0o m\u1ED9t
+    giai \u0111o\u1EA1n m\u1EDBi \u0111\u1EA7y cam go.\n\nTrong tr\xF2 ch\u01A1i
+    n\xE0y, b\u1EA1n s\u1EBD tham gia v\xE0o chi\u1EBFn d\u1ECBch l\u1ECBch s\u1EED
+    n\xE0y. Li\u1EC7u b\u1EA1n c\xF3 th\u1EC3 thay \u0111\u1ED5i c\u1EE5c di\u1EC7n
+    v\xE0 gi\xFAp gi\xE0nh l\u1EA5y t\u1EF1 do cho \u0111\u1EA5t n\u01B0\u1EDBc?"
   icon: {fileID: 505445323}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   selectedColor: {r: 1, g: 0.96862745, b: 0.6039216, a: 1}
@@ -1049,7 +1121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50.799988, y: -17.700012}
+  m_AnchoredPosition: {x: -65.99994, y: -16.210022}
   m_SizeDelta: {x: 214.39, y: 217.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &641918040
@@ -1184,7 +1256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "M\xE0n 3\n"
+  m_text: "M\xE0n 2\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -1794,7 +1866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "M\xE0n 2"
+  m_text: "M\xE0n 3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -2376,7 +2448,7 @@ MonoBehaviour:
   icon: {fileID: 1589975445}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   selectedColor: {r: 1, g: 0.96862745, b: 0.6039216, a: 1}
-  state: 1
+  state: 0
   lockIcon: {fileID: 0}
 --- !u!114 &1589975444
 MonoBehaviour:
@@ -2958,8 +3030,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 36, y: 45}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 36, y: 45.45903}
+  m_SizeDelta: {x: 0, y: -0.918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1712231654
 MonoBehaviour:
@@ -3321,6 +3393,7 @@ RectTransform:
   - {fileID: 1671734116}
   - {fileID: 77625253}
   - {fileID: 539531816}
+  - {fileID: 303780520}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
