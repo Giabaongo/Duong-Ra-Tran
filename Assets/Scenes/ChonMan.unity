@@ -881,9 +881,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79aa9d7901fe744ca4dbf893738e374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionName: "M\xE0n 3"
-  displayTitle: "\u0110i\u1EC7n Bi\xEAn Ph\u1EE7 (1954) "
-  objective: "L\xEDnh Ph\xE1p tinh nhu\u1EC7, ph\xE1o binh, m\xE1y bay h\u1ED7 tr\u1EE3. "
+  missionName: Start
+  displayTitle: "T\u1EBFt M\u1EADu Th\xE2n (1968) "
+  objective: "Qu\xE2n M\u1EF9 & VNCH, trang b\u1ECB hi\u1EC7n \u0111\u1EA1i. "
   difficulty: "Kh\xF3"
   storyTitle: "Chi\u1EBFn th\u1EAFng \u0110i\u1EC7n Bi\xEAn Ph\u1EE7 (1954)"
   storyDescription: "M\xF9a xu\xE2n n\u0103m 1954, tr\xEAn chi\u1EBFn tr\u01B0\u1EDDng

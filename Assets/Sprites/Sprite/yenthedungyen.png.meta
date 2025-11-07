@@ -183,8 +183,8 @@ TextureImporter:
       name: yenthedungyen_1
       rect:
         serializedVersion: 2
-        x: 177
-        y: 263
+        x: 178
+        y: 264
         width: 87
         height: 183
       alignment: 9
@@ -337,7 +337,7 @@ TextureImporter:
       name: yenthedungyen_8
       rect:
         serializedVersion: 2
-        x: 36
+        x: 38
         y: 31
         width: 87
         height: 185
@@ -491,7 +491,7 @@ TextureImporter:
       name: yenthedungyen_15
       rect:
         serializedVersion: 2
-        x: 1118
+        x: 1119
         y: 31
         width: 116
         height: 185
