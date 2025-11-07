@@ -1,100 +1,153 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemyBulletScript : MonoBehaviour
 {
+    [SerializeField, FormerlySerializedAs("force")] private float bulletSpeed = 6f;
+    [SerializeField] private float damage = 3f;
+    [SerializeField] private LayerMask obstacleLayers;
+
     private GameObject player;
     private Rigidbody2D rb;
-    public float force;
     private float timer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        
-        // ✅ BẬT CONTINUOUS COLLISION DETECTION để không xuyên qua collider
-        if (rb != null)
+    }
+
+    private void Start()
+    {
+        EnsureRigidbodySettings();
+        EnsureColliderSettings();
+        AcquirePlayerReference();
+        LaunchTowardPlayer();
+    }
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > 6f)
         {
-            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-            rb.gravityScale = 0; // Đảm bảo không bị rơi
-            Debug.Log("🔫 Bullet Rigidbody2D: Collision Detection = Continuous");
+            Destroy(gameObject);
         }
-        
-        // Kiểm tra collider
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (IsPlayerCollider(other))
+        {
+            ApplyDamageToPlayer(other);
+            Destroy(gameObject);
+            return;
+        }
+
+        if (HitsObstacle(other))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public float DamageAmount => damage;
+
+    private void EnsureRigidbodySettings()
+    {
+        if (rb == null)
+        {
+            Debug.LogError("EnemyBulletScript: missing Rigidbody2D.");
+            return;
+        }
+
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        rb.gravityScale = 0f;
+    }
+
+    private void EnsureColliderSettings()
+    {
         Collider2D bulletCollider = GetComponent<Collider2D>();
-        if (bulletCollider != null)
+        if (bulletCollider == null)
         {
-            bulletCollider.isTrigger = true; // Đảm bảo là trigger
-            Debug.Log("🔫 Bullet Collider: Is Trigger = " + bulletCollider.isTrigger);
+            Debug.LogError("EnemyBulletScript: bullet needs a Collider2D.");
+            return;
         }
-        else
-        {
-            Debug.LogError("❌ Bullet không có Collider2D! Thêm CircleCollider2D hoặc BoxCollider2D vào bullet prefab!");
-        }
-        
+
+        bulletCollider.isTrigger = true;
+    }
+
+    private void AcquirePlayerReference()
+    {
         player = GameObject.FindGameObjectWithTag("Player");
-        
         if (player == null)
         {
-            Debug.LogError("❌ Không tìm thấy Player! Đảm bảo Player có tag 'Player'");
+            Debug.LogError("EnemyBulletScript: Player (tag 'Player') not found.");
+        }
+    }
+
+    private void LaunchTowardPlayer()
+    {
+        if (player == null || rb == null)
+        {
             return;
         }
 
         Vector3 direction = player.transform.position - transform.position;
-        rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * force;
+        rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * bulletSpeed;
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot);
-        
-        Debug.Log("🔫 Bullet fired! Velocity: " + rb.linearVelocity + " | Speed: " + force);
     }
 
-    // Update is called once per frame
-    void Update()
+    private bool IsPlayerCollider(Collider2D other)
     {
-        timer += Time.deltaTime;
-        if (timer > 10)
+        if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            return true;
+        }
+
+        if (other.GetComponent<PlayerHealth>() != null)
+        {
+            return true;
+        }
+
+        if (other.GetComponentInParent<PlayerHealth>() != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private void ApplyDamageToPlayer(Collider2D other)
+    {
+        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+        if (playerHealth == null)
+        {
+            playerHealth = other.GetComponentInParent<PlayerHealth>();
+        }
+
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    private bool HitsObstacle(Collider2D other)
     {
-        Debug.Log("🔫 Bullet collision with: " + other.gameObject.name + " | Tag: " + other.tag + " | Layer: " + LayerMask.LayerToName(other.gameObject.layer));
-        
-        // Kiểm tra nếu trúng Player hoặc TakeDamageCollider của Player
-        if (other.gameObject.CompareTag("Player"))
+        if (((1 << other.gameObject.layer) & obstacleLayers) != 0)
         {
-            Debug.Log("✅ Detected Player tag!");
-            
-            // Thử tìm PlayerHealth trực tiếp
-            PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
-            
-            // Nếu không có (vì đây là child collider), tìm từ parent
-            if (playerHealth == null)
-            {
-                playerHealth = other.gameObject.GetComponentInParent<PlayerHealth>();
-                Debug.Log("Searching PlayerHealth in parent...");
-            }
-            
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(10);
-                Debug.Log("🎯 Enemy bullet hit player! Damage: 10");
-            }
-            else
-            {
-                Debug.LogWarning("⚠️ Player doesn't have PlayerHealth component!");
-            }
-            
-            Destroy(gameObject);
-            return;
+            return true;
         }
-        
-        // Hủy đạn khi chạm tường hoặc obstacle
-        if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Obstacle"))
+
+        if (other.CompareTag("Wall") || other.CompareTag("Obstacle"))
         {
-            Debug.Log("💥 Bullet hit wall/obstacle");
-            Destroy(gameObject);
+            return true;
         }
+
+        if (!other.isTrigger && !other.CompareTag("Enemy") && !other.CompareTag("EnemyBullet"))
+        {
+            return true;
+        }
+
+        return false;
     }
 }

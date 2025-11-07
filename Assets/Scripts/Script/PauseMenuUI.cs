@@ -1,4 +1,4 @@
-﻿// 31/10/2025 AI-Tag
+// 31/10/2025 AI-Tag
 // This was created with the help of Assistant, a Unity Artificial Intelligence product.
 
 using UnityEngine;
@@ -16,14 +16,25 @@ public class PauseMenuUI : MonoBehaviour
     public UnityEngine.UI.Button btnRetreat;
 
     [Header("Scene Names")]
-    public string replaySceneName = "Map2";
+    public string replaySceneName = "Map2"; // se duoc cap nhat theo scene
     public string retreatSceneName = "ChonMan";
 
     private bool isPaused = false;
+    private string currentSceneName;
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += HandleSceneLoaded;
+        HandleSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
+    }
 
     void Start()
     {
-        // Ban đầu ẩn menu
         HideInstant();
     }
 
@@ -32,12 +43,12 @@ public class PauseMenuUI : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
-        gameObject.SetActive(true); // Đảm bảo rằng PauseUI vẫn được kích hoạt
+        gameObject.SetActive(true);
     }
 
     public void TogglePause()
     {
-        Debug.Log("TogglePause method called"); // Thêm dòng này để kiểm tra
+        Debug.Log("TogglePause method called");
         if (canvasGroup.alpha == 0)
         {
             ShowPause();
@@ -53,11 +64,13 @@ public class PauseMenuUI : MonoBehaviour
         Canvas canvas = GetComponent<Canvas>();
         if (canvas != null)
         {
-            canvas.enabled = true; // Kích hoạt Canvas
+            canvas.enabled = true;
         }
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 
     public void HidePause()
@@ -65,7 +78,9 @@ public class PauseMenuUI : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
-        Debug.Log("Pause menu is now hidden"); // Thêm dòng này để kiểm tra
+        Time.timeScale = 1f;
+        isPaused = false;
+        Debug.Log("Pause menu is now hidden");
     }
 
     public void OnResumePressed()
@@ -76,7 +91,12 @@ public class PauseMenuUI : MonoBehaviour
     public void OnReplayPressed()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(replaySceneName);
+        string targetScene = !string.IsNullOrEmpty(replaySceneName) ? replaySceneName : currentSceneName;
+        if (string.IsNullOrEmpty(targetScene))
+        {
+            targetScene = SceneManager.GetActiveScene().name;
+        }
+        SceneManager.LoadScene(targetScene);
     }
 
     public void OnRetreatPressed()
@@ -84,4 +104,11 @@ public class PauseMenuUI : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(retreatSceneName);
     }
+
+    private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        currentSceneName = scene.name;
+        replaySceneName = currentSceneName;
+    }
 }
+

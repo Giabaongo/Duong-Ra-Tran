@@ -1468,7 +1468,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 951274217
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 6
   m_Sprite: {fileID: -376834349712683667, guid: d309246875628a541b7ab137c8bb8821, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1822,7 +1822,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 853, y: 635}
+  m_AnchoredPosition: {x: 841, y: 482}
   m_SizeDelta: {x: 95, y: 65}
   m_Pivot: {x: 0.30449462, y: 0.49999997}
 --- !u!114 &126674005
@@ -2172,7 +2172,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 951274217
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 6
   m_Sprite: {fileID: -7675016864516331882, guid: 379a4d9f9dd1cf64ebffd61b5ba144c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4637,7 +4637,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -6612,7 +6612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &846076611
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8234,7 +8234,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 951274217
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 6
   m_Sprite: {fileID: -7675016864516331882, guid: 379a4d9f9dd1cf64ebffd61b5ba144c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9203,7 +9203,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 951274217
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -9768,7 +9768,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 951274217
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 6
   m_Sprite: {fileID: -376834349712683667, guid: d309246875628a541b7ab137c8bb8821, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10059,7 +10059,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 951274217
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 6
   m_Sprite: {fileID: 1071297532322907506, guid: 1d622edeb11d8ea489fb900a520040f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10123,9 +10123,9 @@ PolygonCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 3.9499998}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 3.15, y: 4.34}
+    border: {x: 0, y: 0.07, z: 0, w: 3.9499998}
+    pivot: {x: 0.49638814, y: 0.060113743}
+    oldSize: {x: 3.15, y: 4.29}
     newSize: {x: 3.15, y: 4.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -10565,7 +10565,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 951274217
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 91d7a4d973e2f804f841fe1f21294cd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14022,7 +14022,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 951274217
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 6
   m_Sprite: {fileID: -7675016864516331882, guid: 379a4d9f9dd1cf64ebffd61b5ba144c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14916,7 +14916,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 951274217
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -15253,7 +15253,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 951274217
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 91d7a4d973e2f804f841fe1f21294cd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
