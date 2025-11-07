@@ -288,7 +288,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 35901464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &121483140
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 164815855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &176443377
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 176443377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &186500145
@@ -892,7 +892,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 186500145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!82 &186500155
@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 205349622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &221543475
@@ -1648,7 +1648,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 319953676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!70 &319953679
@@ -2209,6 +2209,7 @@ GameObject:
   - component: {fileID: 474334426}
   - component: {fileID: 474334424}
   - component: {fileID: 474334425}
+  - component: {fileID: 474334427}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2283,7 +2284,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 474334421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!4 &474334426
@@ -2295,12 +2296,49 @@ Transform:
   m_GameObject: {fileID: 474334421}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1617, y: -0.1617, z: 0}
+  m_LocalPosition: {x: -1.01, y: 0.14, z: 0}
   m_LocalScale: {x: 0.2571, y: 0.373, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &474334427
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474334421}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.009273871, y: 0.15177335}
+  m_Size: {x: 2.780083, y: 0.8193345}
+  m_Direction: 1
 --- !u!1 &511232482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2632,6 +2670,7 @@ GameObject:
   - component: {fileID: 568743504}
   - component: {fileID: 568743503}
   - component: {fileID: 568743502}
+  - component: {fileID: 568743505}
   m_Layer: 0
   m_Name: spr_tree1 (7)
   m_TagString: Untagged
@@ -2761,6 +2800,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &568743505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568743500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &571740759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,7 +2950,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 571740759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &583294431
@@ -3040,7 +3091,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 583294431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &609694247
@@ -3491,7 +3542,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 688865508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!70 &688865511
@@ -3599,7 +3650,6 @@ GameObject:
   m_Component:
   - component: {fileID: 705176470}
   - component: {fileID: 705176469}
-  - component: {fileID: 705176471}
   m_Layer: 0
   m_Name: cochay
   m_TagString: Untagged
@@ -3680,18 +3730,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 829380486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &705176471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705176468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &754485875
 GameObject:
   m_ObjectHideFlags: 0
@@ -4483,7 +4521,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1001725023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1012914328
@@ -4670,7 +4708,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1129566498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!70 &1129566501
@@ -5376,7 +5414,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1206175959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1234337349
@@ -5518,7 +5556,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1234337349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!114 &1234337354
@@ -6637,7 +6675,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1362092758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1370721214
@@ -7267,6 +7305,7 @@ GameObject:
   - component: {fileID: 1470126085}
   - component: {fileID: 1470126086}
   - component: {fileID: 1470126087}
+  - component: {fileID: 1470126088}
   m_Layer: 0
   m_Name: baicui (1)
   m_TagString: Untagged
@@ -7356,9 +7395,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 1470126084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
+--- !u!70 &1470126088
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470126084}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.06668926, y: 0.11078867}
+  m_Size: {x: 0.4799849, y: 0.2563962}
+  m_Direction: 1
 --- !u!1 &1505203605
 GameObject:
   m_ObjectHideFlags: 0
@@ -7459,7 +7535,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1505203605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1528788190
@@ -8414,7 +8490,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650320643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1650488676
@@ -8816,7 +8892,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1681448616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1692643108
@@ -9458,7 +9534,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766239650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1778223301
@@ -9986,7 +10062,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1804679388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!70 &1804679390
@@ -10909,7 +10985,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2016576415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &2016875505
@@ -11050,7 +11126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2016875505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6746457073d73394e9487b132821ca0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &2038236088
