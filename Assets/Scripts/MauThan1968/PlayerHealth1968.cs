@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth1968 : MonoBehaviour
 {
     [Header("Health Settings")]
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int currentHealth;
+    
+    [Header("Events")]
+    public UnityEvent<int, int> OnHealthChanged; // (currentHealth, maxHealth)
     
     [Header("Damage Settings")]
     [SerializeField] private float invincibilityTime = 0.5f; // Thời gian bất tử sau khi nhận sát thương
@@ -31,6 +35,9 @@ public class PlayerHealth1968 : MonoBehaviour
         {
             originalColor = spriteRenderer.color;
         }
+        
+        // Trigger initial health update
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
     
     private void Update()
@@ -56,6 +63,9 @@ public class PlayerHealth1968 : MonoBehaviour
         
         currentHealth -= damage;
         Debug.Log($"Player took {damage} damage. Current health: {currentHealth}/{maxHealth}");
+        
+        // Trigger health changed event - CẬP NHẬT NGAY LẬP TỨC
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
         
         // Hiệu ứng nhận sát thương
         if (spriteRenderer != null)
@@ -131,6 +141,9 @@ public class PlayerHealth1968 : MonoBehaviour
         
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
         Debug.Log($"Player healed {amount}. Current health: {currentHealth}/{maxHealth}");
+        
+        // Trigger health changed event
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
     
     // Collision với enemy

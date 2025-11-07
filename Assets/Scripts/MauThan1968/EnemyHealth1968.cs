@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemyHealth1968 : MonoBehaviour
 {
@@ -21,8 +22,62 @@ public class EnemyHealth1968 : MonoBehaviour
     
     private bool isDead = false;
     
+    // ★ ANTI-RESPAWN: Track enemies đã chết để ngăn spawn lại
+    private static HashSet<string> deadEnemies = new HashSet<string>();
+    private string enemyID;
+    
     private void Start()
     {
+        // ★ ANTI-RESPAWN: Tạo unique ID cho enemy
+        enemyID = $"{gameObject.name}_{transform.position.x:F2}_{transform.position.y:F2}";
+        
+        // ★ ANTI-RESPAWN: Check nếu enemy này đã chết rồi
+        if (deadEnemies.Contains(enemyID))
+        {
+            Debug.LogWarning($"[EnemyHealth] ⚠️ {gameObject.name} đã chết trước đó! DESTROYING RESPAWN CLONE!");
+            Destroy(gameObject);
+            return;
+        }
+        
+        // ★ Check nếu là clone (phát hiện respawn) - XÓA NGAY LẬP TỨC!
+        if (gameObject.name.Contains("(Clone)"))
+        {
+            Debug.LogWarning($"[EnemyHealth] ⚠️ Detected CLONE enemy: {gameObject.name}!");
+            Debug.LogWarning($"[EnemyHealth] Position: {transform.position}");
+            
+            // ★ CRITICAL FIX: Bất kỳ enemy nào có "(Clone)" đều là respawn → XÓA!
+            Debug.LogError($"[EnemyHealth] 🚫 BLOCKING RESPAWN! Destroying {gameObject.name}");
+            Debug.LogError($"[EnemyHealth] → ANY clone is forbidden in this game mode!");
+            Destroy(gameObject);
+            return;
+        }
+        
+        // ★ BACKUP CHECK: Kiểm tra vị trí gần với enemy đã chết (tolerance 1 unit)
+        foreach (string deadID in deadEnemies)
+        {
+            // Parse position từ ID (format: "Name_X_Y")
+            string[] parts = deadID.Split('_');
+            if (parts.Length >= 3)
+            {
+                string deadName = parts[0];
+                if (float.TryParse(parts[1], out float deadX) && float.TryParse(parts[2], out float deadY))
+                {
+                    // Check nếu tên giống và vị trí gần (trong vòng 1 unit)
+                    string currentName = gameObject.name.Replace("(Clone)", "");
+                    float distX = Mathf.Abs(transform.position.x - deadX);
+                    float distY = Mathf.Abs(transform.position.y - deadY);
+                    
+                    if (deadName == currentName && distX < 1f && distY < 1f)
+                    {
+                        Debug.LogError($"[EnemyHealth] 🚫 Detected respawn at same position! Destroying!");
+                        Debug.LogError($"[EnemyHealth] → Dead at: ({deadX:F2}, {deadY:F2}), Spawn at: ({transform.position.x:F2}, {transform.position.y:F2})");
+                        Destroy(gameObject);
+                        return;
+                    }
+                }
+            }
+        }
+        
         currentHealth = maxHealth;
         
         // 🔍 DEBUG: Kiểm tra health ban đầu
@@ -105,6 +160,13 @@ public class EnemyHealth1968 : MonoBehaviour
         
         isDead = true;
         Debug.Log($"💀💀💀 [EnemyHealth] {gameObject.name} has been killed!");
+        
+        // ★ ANTI-RESPAWN: Đánh dấu enemy này đã chết
+        if (!string.IsNullOrEmpty(enemyID))
+        {
+            deadEnemies.Add(enemyID);
+            Debug.Log($"[EnemyHealth] 🔒 Locked enemy ID: {enemyID} (Total dead: {deadEnemies.Count})");
+        }
         
         // Thông báo cho GameManager (CHỈ 1 LẦN)
         if (GameManager1968.Instance != null)

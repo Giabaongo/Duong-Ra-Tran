@@ -16,6 +16,8 @@ public class PlayerBullet1968 : MonoBehaviour, IBullet
     
     private Rigidbody2D rb;
     private Collider2D col;
+    private Vector2 customDirection = Vector2.zero; // ★ NEW: Custom direction for bullet
+    private bool hasCustomDirection = false; // ★ NEW: Flag to check if custom direction is set
     
     private void Awake()
     {
@@ -53,12 +55,25 @@ public class PlayerBullet1968 : MonoBehaviour, IBullet
     {
         if (rb == null) return; // Không làm gì nếu thiếu components
         
-        // Tự động di chuyển về phía trước
-        rb.linearVelocity = transform.right * speed;
-        Debug.Log($"[PlayerBullet] 🚀 Launched with velocity: {rb.linearVelocity}");
+        // ★ NEW: Use custom direction if set, otherwise use transform.right
+        Vector2 direction = hasCustomDirection ? customDirection : (Vector2)transform.right;
+        
+        // Tự động di chuyển theo hướng đã set
+        rb.linearVelocity = direction.normalized * speed;
+        Debug.Log($"[PlayerBullet] 🚀 Launched with velocity: {rb.linearVelocity} (custom: {hasCustomDirection})");
         
         // Tự hủy sau lifetime giây
         Destroy(gameObject, lifetime);
+    }
+    
+    /// <summary>
+    /// ★ NEW: Set custom direction for bullet (call BEFORE Start())
+    /// </summary>
+    public void SetDirection(Vector2 direction)
+    {
+        customDirection = direction.normalized;
+        hasCustomDirection = true;
+        Debug.Log($"[PlayerBullet] ✅ Custom direction set: {customDirection}");
     }
     
     private bool hasHit = false; // Đảm bảo chỉ hit 1 lần

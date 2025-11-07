@@ -54,6 +54,16 @@ public class Enermy1968Controller : MonoBehaviour
 
     void Start()
     {
+        // ★ CRITICAL: Block ANY clone enemy immediately!
+        if (gameObject.name.Contains("(Clone)"))
+        {
+            Debug.LogError($"[Enemy] 🚫🚫🚫 CLONE DETECTED: {gameObject.name}!");
+            Debug.LogError($"[Enemy] → Position: {transform.position}");
+            Debug.LogError($"[Enemy] → Clones are FORBIDDEN! Destroying immediately!");
+            Destroy(gameObject);
+            return;
+        }
+        
         // ★ SAFETY: Prevent re-initialization using STATIC tracking
         // Use GetInstanceID() to uniquely identify this GameObject
         int instanceID = gameObject.GetInstanceID();

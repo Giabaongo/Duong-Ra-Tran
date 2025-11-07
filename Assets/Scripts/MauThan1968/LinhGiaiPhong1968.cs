@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class LinhGiaiPhong1968 : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class LinhGiaiPhong1968 : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletSpeed = 10f;
+    
+    [Header("Auto-Aim Settings")]
+    [SerializeField] private bool enableAutoAim = true; // ★ NEW: Bật/tắt auto-aim
+    [SerializeField] private float autoAimRange = 10f; // ★ NEW: Tầm tự động aim (10 units)
+    [SerializeField] private LayerMask enemyLayer; // ★ NEW: Layer của enemy để detect
 
     [Header("Components")]
     private Rigidbody2D rb;
@@ -20,6 +26,7 @@ public class LinhGiaiPhong1968 : MonoBehaviour
     [Header("Input")]
     private Vector2 moveInput;
     private bool facingRight = true;
+    private Vector2 lastMoveDirection = Vector2.right; // ★ NEW: Track last move direction for shooting
     
     [Header("State")]
     private bool isAttacking = false;
@@ -29,6 +36,9 @@ public class LinhGiaiPhong1968 : MonoBehaviour
     [Header("Health")]
     [SerializeField] private int maxHealth = 20; 
     private int currentHealth;
+    
+    [Header("Events")]
+    public UnityEvent<int, int> OnHealthChanged; // (currentHealth, maxHealth)
 
     void Start()
     {
@@ -57,8 +67,17 @@ public class LinhGiaiPhong1968 : MonoBehaviour
 
         // Initialize health
         currentHealth = maxHealth;
+        
+        // Trigger initial health update
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
 
-        Debug.Log("LinhGiaiPhong1968 initialized successfully!");
+        // ★ WARN: Check auto-aim setup
+        if (enableAutoAim && enemyLayer.value == 0)
+        {
+            Debug.LogWarning("[Player] ⚠️ Auto-Aim enabled but Enemy Layer not set! Will auto-detect...");
+        }
+
+        Debug.Log($"[Player] ✅ LinhGiaiPhong1968 initialized! Auto-Aim: {enableAutoAim}, Range: {autoAimRange}");
     }
 
     void Update()
@@ -88,12 +107,24 @@ public class LinhGiaiPhong1968 : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         moveInput = new Vector2(horizontal, vertical).normalized;
+        
+        // ★ NEW: Track last move direction for shooting
+        if (moveInput.magnitude > 0.1f)
+        {
+            lastMoveDirection = moveInput;
+        }
     }
 
     // For new Input System (call this from PlayerInput component or Input Actions)
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+        
+        // ★ NEW: Track last move direction for shooting
+        if (moveInput.magnitude > 0.1f)
+        {
+            lastMoveDirection = moveInput;
+        }
     }
 
     private void MovePlayer()
@@ -157,8 +188,27 @@ public class LinhGiaiPhong1968 : MonoBehaviour
             return;
         }
         
-        // Calculate shoot direction based on facing direction
-        Vector2 shootDirection = facingRight ? Vector2.right : Vector2.left;
+        // ★ NEW: Auto-aim to nearest enemy if enabled and enemy in range
+        Vector2 shootDirection;
+        Transform targetEnemy = null;
+        
+        if (enableAutoAim)
+        {
+            targetEnemy = FindNearestEnemy();
+        }
+        
+        if (targetEnemy != null)
+        {
+            // Có enemy trong tầm → Bắn vào enemy
+            shootDirection = (targetEnemy.position - transform.position).normalized;
+            Debug.Log($"[Player] 🎯 AUTO-AIM: Targeting {targetEnemy.name} at {targetEnemy.position}");
+        }
+        else
+        {
+            // Không có enemy → Bắn theo hướng di chuyển
+            shootDirection = lastMoveDirection.normalized;
+            Debug.Log($"[Player] ➡️ Manual aim: Direction {shootDirection}");
+        }
         
         // If fire point exists, use it, otherwise use player position with offset
         Vector3 spawnPos;
@@ -176,15 +226,16 @@ public class LinhGiaiPhong1968 : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
         Debug.Log($"★ PLAYER BULLET spawned at {spawnPos}, scale: {bullet.transform.localScale}");
         
+        // ★ NEW: Calculate rotation angle for bullet sprite
+        float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+        bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
+        
         // Set bullet direction using PlayerBullet1968 script
         PlayerBullet1968 playerBullet = bullet.GetComponent<PlayerBullet1968>();
         if (playerBullet != null)
         {
-            // PlayerBullet1968 tự động bay trong Start(), chỉ cần rotate hướng
-            if (shootDirection == Vector2.left)
-            {
-                bullet.transform.rotation = Quaternion.Euler(0, 0, 180);
-            }
+            // ★ NEW: Set custom direction instead of using default
+            playerBullet.SetDirection(shootDirection);
             Debug.Log($"[LinhGiaiPhong1968] PlayerBullet1968 found, direction set to {shootDirection}");
         }
         else
@@ -198,7 +249,7 @@ public class LinhGiaiPhong1968 : MonoBehaviour
             }
         }
         
-        Debug.Log($"Player shot bullet in direction: {shootDirection}");
+        Debug.Log($"Player shot bullet in direction: {shootDirection} (angle: {angle}°)");
     }
 
     private void EndAttack()
@@ -257,6 +308,9 @@ public class LinhGiaiPhong1968 : MonoBehaviour
         currentHealth = Mathf.Max(currentHealth, 0);
 
         Debug.Log($"[Player] ⚔️ Player took {damage} damage! Health: {currentHealth}/{maxHealth}");
+        
+        // Trigger health changed event - CẬP NHẬT NGAY LẬP TỨC
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
 
         if (currentHealth <= 0)
         {
@@ -308,12 +362,93 @@ public class LinhGiaiPhong1968 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ★ NEW: Tìm enemy gần nhất trong tầm auto-aim
+    /// </summary>
+    private Transform FindNearestEnemy()
+    {
+        // ★ FIX: Auto-detect enemy layer nếu chưa setup
+        LayerMask effectiveEnemyLayer = enemyLayer;
+        if (enemyLayer.value == 0)
+        {
+            // Fallback: Tìm layer "Enemy" hoặc tìm tất cả colliders và filter theo tag
+            int enemyLayerIndex = LayerMask.NameToLayer("Enemy");
+            if (enemyLayerIndex != -1)
+            {
+                effectiveEnemyLayer = 1 << enemyLayerIndex;
+                Debug.LogWarning($"[Player] ⚠️ Enemy Layer chưa setup! Auto-detected layer: {enemyLayerIndex}");
+            }
+            else
+            {
+                // Last resort: Search all layers
+                effectiveEnemyLayer = ~0; // All layers
+                Debug.LogWarning("[Player] ⚠️ Enemy layer not found! Searching all layers...");
+            }
+        }
+        
+        // Find all enemies in range using OverlapCircle
+        Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, autoAimRange, effectiveEnemyLayer);
+        
+        Debug.Log($"[Player] 🔍 Scanning for enemies... Found {enemiesInRange.Length} colliders in range {autoAimRange}");
+        
+        if (enemiesInRange.Length == 0)
+        {
+            return null; // Không có enemy nào trong tầm
+        }
+        
+        Transform nearestEnemy = null;
+        float nearestDistance = float.MaxValue;
+        
+        int validEnemies = 0;
+        foreach (Collider2D enemyCollider in enemiesInRange)
+        {
+            // ★ FILTER: Chỉ aim vào object có tag "Enemy"
+            if (!enemyCollider.CompareTag("Enemy"))
+            {
+                Debug.Log($"[Player] ⚪ Skipping {enemyCollider.name} - Not tagged as Enemy (tag: {enemyCollider.tag})");
+                continue; // Skip non-enemy objects
+            }
+            
+            // Check xem enemy có còn sống không
+            EnemyHealth1968 enemyHealth = enemyCollider.GetComponent<EnemyHealth1968>();
+            if (enemyHealth != null && enemyHealth.IsDead())
+            {
+                Debug.Log($"[Player] 💀 Skipping {enemyCollider.name} - Already dead");
+                continue; // Skip enemy đã chết
+            }
+            
+            // Tính khoảng cách
+            float distance = Vector2.Distance(transform.position, enemyCollider.transform.position);
+            validEnemies++;
+            
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearestEnemy = enemyCollider.transform;
+            }
+        }
+        
+        if (nearestEnemy != null)
+        {
+            Debug.Log($"[Player] 🎯 LOCKED ON TARGET: {nearestEnemy.name} at distance {nearestDistance:F2} (Valid enemies: {validEnemies})");
+        }
+        else
+        {
+            Debug.Log($"[Player] ❌ No valid enemy found (Scanned: {enemiesInRange.Length}, Valid: {validEnemies})");
+        }
+        
+        return nearestEnemy;
+    }
+    
     // Heal method
     public void Heal(int amount)
     {
         currentHealth += amount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
         Debug.Log($"LinhGiaiPhong1968 healed {amount}! Health: {currentHealth}/{maxHealth}");
+        
+        // Trigger health changed event
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
 
     // Getters
@@ -330,6 +465,27 @@ public class LinhGiaiPhong1968 : MonoBehaviour
         {
             Gizmos.color = Color.green;
             Gizmos.DrawLine(transform.position, transform.position + (Vector3)rb.linearVelocity);
+        }
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        // ★ NEW: Draw auto-aim range
+        if (enableAutoAim)
+        {
+            Gizmos.color = new Color(1f, 1f, 0f, 0.3f); // Yellow transparent
+            Gizmos.DrawWireSphere(transform.position, autoAimRange);
+            
+            // Draw line to nearest enemy if in play mode
+            if (Application.isPlaying)
+            {
+                Transform nearestEnemy = FindNearestEnemy();
+                if (nearestEnemy != null)
+                {
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawLine(transform.position, nearestEnemy.position);
+                }
+            }
         }
     }
 }

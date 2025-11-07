@@ -822,14 +822,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79aa9d7901fe744ca4dbf893738e374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionName: "M\xE0n 3"
-  displayTitle: "\u0110i\u1EC7n Bi\xEAn Ph\u1EE7 (1954) "
-  objective: "L\xEDnh Ph\xE1p tinh nhu\u1EC7, ph\xE1o binh, m\xE1y bay h\u1ED7 tr\u1EE3. "
+  missionName: Start
+  displayTitle: "T\u1EBFt M\u1EADu Th\xE2n (1968) "
+  objective: "Qu\xE2n M\u1EF9 & VNCH, trang b\u1ECB hi\u1EC7n \u0111\u1EA1i. "
   difficulty: "Kh\xF3"
   icon: {fileID: 505445323}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   selectedColor: {r: 1, g: 0.96862745, b: 0.6039216, a: 1}
-  state: 0
+  state: 1
   lockIcon: {fileID: 0}
 --- !u!114 &505445322
 MonoBehaviour:
