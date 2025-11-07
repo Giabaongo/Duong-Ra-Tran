@@ -48,6 +48,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("☠ Enemy Defeated: " + gameObject.name);
+        GameManager.Instance.EnemyDefeated(); // Gọi phương thức EnemyDefeated từ GameManager
         Destroy(gameObject);
     }
 }

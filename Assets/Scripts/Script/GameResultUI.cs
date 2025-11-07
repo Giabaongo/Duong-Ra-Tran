@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+// 06/11/2025 AI-Tag
+// This was created with the help of Assistant, a Unity Artificial Intelligence product.
+
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -6,19 +9,19 @@ using UnityEngine.SceneManagement;
 public class GameResultUI : MonoBehaviour
 {
     [Header("Refs")]
-    public CanvasGroup canvasGroup;   // gán CanvasGroup của ResultUI
-    public TMP_Text titleText;        // TitleText (CHIẾN THẮNG!, THẤT BẠI!)
-    public TMP_Text descText;         // DescText (mô tả nhiệm vụ)
-    public Button btnTiepTuc;         // nút "TIẾP TỤC" / "THỬ LẠI"
-    public Button btnThoat;           // nút "THOÁT"
+    public CanvasGroup canvasGroup;   // gan CanvasGroup cua ResultUI
+    public TMP_Text titleText;        // TitleText (CHIEN THANG!, THAT BAI!)
+    public TMP_Text descText;         // DescText (mo ta nhiem vu)
+    public Button btnTiepTuc;         // nut "TIEP TUC" / "THU LAI"
+    public Button btnThoat;           // nut "THOAT"
 
     [Header("Win text")]
     [TextArea(2, 4)]
     public string winTitle = "CHIẾN THẮNG!";
     [TextArea(2, 4)]
     public string winDesc =
-        "Quân ta đã phá vòng vây ở biên giới.\n" +
-        "Tuyến tiếp tế được mở thông.\n" +
+        "Quân ta đã phá vỡ vòng vây địch.\n" +
+        "Tuyệt đối không được mất thăng bằng.\n" +
         "Chiến dịch kết thúc thắng lợi!";
 
     [Header("Lose text")]
@@ -28,30 +31,58 @@ public class GameResultUI : MonoBehaviour
     public string loseDesc =
         "Bạn đã gục ngã trên chiến trường...\n" +
         "Kẻ địch vẫn còn rất mạnh.\n" +
-        "Thử lại nhiệm vụ?";
+        "Thất bại nhiệm vụ!";
 
     [Header("Scene control")]
-    public string replaySceneName = "Map2";     // scene để chơi lại
-    public string backToSelectScene = "ChonMan"; // scene quay về chọn màn
+    public string replaySceneName = "Map1";     // se duoc gan tu dong theo scene
+    public string backToSelectScene = "ChonMan"; // quay ve man chon
 
-    bool showing = false;
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip victoryClip;
+    [SerializeField] private AudioClip loseClip;
+    [SerializeField] private float sfxVolume = 1f;
 
-    void Awake()
+    public bool IsShowing { get; private set; }
+
+    private bool lastResultWasWin;
+
+    private void OnEnable()
     {
-        HideImmediate();
-
-        // Gán hành vi nút
-        if (btnTiepTuc != null)
-            btnTiepTuc.onClick.AddListener(OnClickTiepTuc);
-
-        if (btnThoat != null)
-            btnThoat.onClick.AddListener(OnClickThoat);
+        SceneManager.sceneLoaded += HandleSceneLoaded;
+        HandleSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
 
-    void HideImmediate()
+    private void OnDisable()
     {
-        showing = false;
-        gameObject.SetActive(false);
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
+    }
+
+    private void Awake()
+    {
+        replaySceneName = SceneManager.GetActiveScene().name; // fallback neu OnEnable chua chay
+        HideImmediate();
+
+        if (btnTiepTuc != null)
+        {
+            btnTiepTuc.onClick.AddListener(OnClickTiepTuc);
+        }
+
+        if (btnThoat != null)
+        {
+            btnThoat.onClick.AddListener(OnClickThoat);
+        }
+    }
+
+    private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        replaySceneName = scene.name; // khi thua -> reload dung scene dang choi
+    }
+
+    private void HideImmediate()
+    {
+        Time.timeScale = 1f; // resume gameplay khi UI bi an
+        IsShowing = false;
 
         if (canvasGroup != null)
         {
@@ -64,27 +95,26 @@ public class GameResultUI : MonoBehaviour
     // ------------ PUBLIC API ---------------
     public void ShowWin()
     {
-        InternalShow(winTitle, winDesc, isWin: true);
+        InternalShow(winTitle, winDesc, true);
     }
 
     public void ShowLose()
     {
-        InternalShow(loseTitle, loseDesc, isWin: false);
+        InternalShow(loseTitle, loseDesc, false);
     }
 
     // ------------ CORE ---------------
-    void InternalShow(string title, string desc, bool isWin)
+    private void InternalShow(string title, string desc, bool isWin)
     {
-        // stop gameplay time
+        gameObject.SetActive(true);
         Time.timeScale = 0f;
 
-        showing = true;
-        gameObject.SetActive(true);
+        IsShowing = true;
+        lastResultWasWin = isWin;
 
-        if (titleText) titleText.text = title;
-        if (descText) descText.text = desc;
+        if (titleText != null) titleText.text = title;
+        if (descText != null) descText.text = desc;
 
-        // Đổi label nút trái tùy win/thua
         if (btnTiepTuc != null)
         {
             var btnTxt = btnTiepTuc.GetComponentInChildren<TMP_Text>();
@@ -94,43 +124,65 @@ public class GameResultUI : MonoBehaviour
             }
         }
 
-        // Fade in nhanh
         if (canvasGroup != null)
         {
             canvasGroup.alpha = 1f;
             canvasGroup.blocksRaycasts = true;
             canvasGroup.interactable = true;
         }
+
+        PlayResultSfx(isWin);
     }
 
     // ------------ BUTTON HANDLERS ---------------
-    // Nút TIẾP TỤC / THỬ LẠI
-    void OnClickTiepTuc()
+    private void OnClickTiepTuc()
     {
-        // resume time trước khi đổi scene
         Time.timeScale = 1f;
 
-        // Nếu win -> quay về chọn màn (ví dụ)
-        // Nếu thua -> chơi lại màn hiện tại
-        // Cách đơn giản: kiểm tra text của nút
-        string currentBtnText = btnTiepTuc.GetComponentInChildren<TMP_Text>().text;
-        if (currentBtnText == "TIẾP TỤC")
+        if (lastResultWasWin)
         {
-            // player thắng => về chọn màn
-            SceneManager.LoadScene(backToSelectScene);
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.HandleContinueAfterWin();
+            }
+            else
+            {
+                SceneManager.LoadScene(backToSelectScene);
+            }
         }
         else
         {
-            // player thua => reload màn
             SceneManager.LoadScene(replaySceneName);
         }
     }
 
-    // Nút THOÁT
-    void OnClickThoat()
+    private void OnClickThoat()
     {
         Time.timeScale = 1f;
-        // về MainMenu (bạn thay tên scene đúng của bạn)
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void PlayResultSfx(bool isWin)
+    {
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
+        if (audioSource == null)
+        {
+            return;
+        }
+
+        AudioClip clipToPlay = isWin ? victoryClip : loseClip;
+        if (clipToPlay == null)
+        {
+            return;
+        }
+
+        audioSource.Stop();
+        audioSource.clip = clipToPlay;
+        audioSource.volume = sfxVolume;
+        audioSource.Play();
     }
 }

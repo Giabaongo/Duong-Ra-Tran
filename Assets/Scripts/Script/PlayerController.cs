@@ -6,111 +6,132 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float Movespeed = 2f;
+
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Animator animator;
+    private float baseScaleX;
 
-    public bool FacingLeft = false;
+    public bool FacingLeft { get; private set; }
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
         if (rb == null)
         {
-            Debug.LogError("Rigidbody2D không tìm thấy trên Player! Thêm Rigidbody2D component vào Player GameObject.");
+            Debug.LogError("PlayerController: Rigidbody2D not found on Player.");
         }
         else
         {
-            rb.gravityScale = 0f; // Tắt gravity cho game top-down
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Không cho xoay
+            rb.gravityScale = 0f;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             Debug.Log("PlayerController initialized successfully!");
         }
 
         if (animator == null)
         {
-            Debug.LogWarning("Animator không tìm thấy trên Player!");
+            Debug.LogWarning("PlayerController: Animator not found on Player.");
         }
+
+        baseScaleX = Mathf.Abs(transform.localScale.x);
     }
 
-    void Update()
+    private void Update()
     {
-        // Lấy input từ bàn phím (WASD hoặc Arrow keys)
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        moveInput = new Vector2(horizontal, vertical);
+        Vector2 rawInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        rawInput = Vector2.ClampMagnitude(rawInput, 1f);
 
-        // Áp dụng movement cho Rigidbody2D
+        moveInput = ConvertInputToWorld(rawInput);
+
+        if (moveInput.sqrMagnitude > 0f)
+        {
+            Vector2 currentVelocity = rb != null ? rb.linearVelocity : Vector2.zero;
+            Debug.Log($"Move Input (world): {moveInput} | Velocity: {currentVelocity}");
+        }
+
         if (rb != null)
         {
-            rb.linearVelocity = moveInput.normalized * Movespeed;
+            Vector2 appliedVelocity = moveInput.normalized * Movespeed;
+            rb.linearVelocity = appliedVelocity;
         }
 
-        // Cập nhật animation
-        UpdateAnimation();
-
-        // Xoay nhân vật theo hướng di chuyển hoặc con trỏ chuột
-        AdjustFacingDirection();
-    }
-
-    private void UpdateAnimation()
-    {
         if (animator != null)
         {
-            animator.SetBool("IsRunning", moveInput.magnitude > 0);
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                animator.SetBool("IsAttacking", true);
-                RotateTowardsMouse(); // Xoay nhân vật theo hướng chuột khi tấn công
-            }
-            else
-            {
-                animator.SetBool("IsAttacking", false);
-            }
+            bool isRunning = moveInput.sqrMagnitude > 0f;
+            animator.SetBool("IsRunning", isRunning);
+            animator.SetBool("IsAttacking", Input.GetMouseButtonDown(0));
         }
+
+        UpdateFacing(rawInput);
     }
 
-    private void AdjustFacingDirection()
+    private Vector2 ConvertInputToWorld(Vector2 input)
     {
-        if (moveInput.magnitude > 0)
+        Camera cam = Camera.main;
+        if (cam == null)
         {
-            // Quay mặt theo hướng phím di chuyển
-            if (moveInput.x > 0)
-            {
-                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                FacingLeft = false;
-            }
-            else if (moveInput.x < 0)
-            {
-                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                FacingLeft = true;
-            }
+            return input;
+        }
+
+        Vector3 camRight = cam.transform.right;
+        Vector3 camUp = cam.transform.up;
+
+        Vector3 projected = camRight * input.x + camUp * input.y;
+        return new Vector2(projected.x, projected.y);
+    }
+
+    private void UpdateFacing(Vector2 rawInput)
+    {
+        if (Mathf.Abs(rawInput.x) > 0.01f)
+        {
+            SetFacingLeft(rawInput.x < 0f);
         }
         else
         {
-            // Nếu không di chuyển, quay mặt theo hướng chuột
             RotateTowardsMouse();
         }
     }
 
     private void RotateTowardsMouse()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Camera cam = Camera.main;
+        if (cam == null)
+        {
+            return;
+        }
+
+        Vector3 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
 
         Vector2 direction = (mousePosition - transform.position).normalized;
 
-        if (direction.x > 0)
+        if (direction.x > 0f)
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            FacingLeft = false;
+            SetFacingLeft(false);
         }
-        else if (direction.x < 0)
+        else if (direction.x < 0f)
         {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            FacingLeft = true;
+            SetFacingLeft(true);
+        }
+    }
+
+    private void SetFacingLeft(bool left)
+    {
+        FacingLeft = left;
+        float newScaleX = FacingLeft ? -baseScaleX : baseScaleX;
+        Vector3 localScale = transform.localScale;
+        localScale.x = newScaleX;
+        transform.localScale = localScale;
+    }
+
+    public void FaceTowardsWorld(Vector3 worldPosition)
+    {
+        Vector2 direction = worldPosition - transform.position;
+        if (Mathf.Abs(direction.x) > 0.01f)
+        {
+            SetFacingLeft(direction.x < 0f);
         }
     }
 }

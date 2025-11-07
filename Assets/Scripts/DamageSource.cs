@@ -3,6 +3,9 @@ using UnityEngine;
 public class DamageSource : MonoBehaviour
 {
     [SerializeField] private float damageAmount = 25f;
+    
+    // Public property để truy cập từ bên ngoài
+    public float DamageAmount => damageAmount;
 
     private void OnEnable()
     {
