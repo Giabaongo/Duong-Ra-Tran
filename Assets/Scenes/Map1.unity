@@ -6274,7 +6274,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Use WASD to move, Right Click to attack.
 
-    Kill 2 enemy
+    Kill all enemy
 
 '
   m_isRightToLeft: 0
