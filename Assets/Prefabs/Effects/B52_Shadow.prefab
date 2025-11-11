@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::B52ShadowSimple
   flySpeed: 5
-  delayBetweenFlights: 30
+  delayBetweenFlights: 10
   autoStart: 1
   initialDelay: 5
   shadowOpacity: 0.6

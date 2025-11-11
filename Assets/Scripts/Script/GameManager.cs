@@ -1,4 +1,4 @@
-// 06/11/2025 AI-Tag
+﻿// 06/11/2025 AI-Tag
 // This was created with the help of Assistant, a Unity Artificial Intelligence product.
 
 using System;
@@ -162,7 +162,13 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1f;
 
-        if (index >= 0 && index + 1 < levelOrder.Length)
+        // Nếu là Map1, quay về scene Start
+        if (currentScene == "Map1")
+        {
+            Debug.Log($"GameManager: Map1 completed, returning to Start scene");
+            SceneManager.LoadScene("Start");
+        }
+        else if (index >= 0 && index + 1 < levelOrder.Length)
         {
             string nextScene = levelOrder[index + 1];
             Debug.Log($"GameManager: advancing from {currentScene} to {nextScene}");

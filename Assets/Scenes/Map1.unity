@@ -288,7 +288,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 35901464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &121483140
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 164815855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &176443377
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 176443377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &186500145
@@ -868,7 +868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   maxHealth: 100
   health: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1008222602}
 --- !u!114 &186500153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,7 +892,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 186500145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!82 &186500155
@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 205349622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &221543475
@@ -1648,7 +1648,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 319953676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!70 &319953679
@@ -1846,7 +1846,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 330371667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &406668854
@@ -2663,7 +2663,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 568743500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!70 &568743503
@@ -2899,7 +2899,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 571740759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &583294431
@@ -3040,7 +3040,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 583294431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &609694247
@@ -3307,7 +3307,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 630817711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &685063557
@@ -3491,7 +3491,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 688865508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!70 &688865511
@@ -3689,7 +3689,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 705176468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &733540670
@@ -4524,7 +4524,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Use WASD to move, Right Click to attack.
 
-    Kill 2 enemy
+    Kill all enemy
 
 '
   m_isRightToLeft: 0
@@ -4837,7 +4837,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1001725023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1008222600
@@ -5053,7 +5053,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1012914328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1129566498
@@ -5099,7 +5099,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1129566498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!70 &1129566501
@@ -5480,7 +5480,7 @@ MonoBehaviour:
   winDesc: "B\u1EA1n \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!"
   loseTitle: "TH\u1EA4T B\u1EA0I!"
   loseDesc: "B\u1EA1n \u0111\xE3 g\u1EE5c ng\xE3...\nTh\u1EED l\u1EA1i nh\xE9?"
-  replaySceneName: Map2
+  replaySceneName: Start
   backToSelectScene: ChonMan
   audioSource: {fileID: 1197867083}
   victoryClip: {fileID: 8300000, guid: 76b5a3b501542104ba576fdbd425c665, type: 3}
@@ -5805,7 +5805,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1206175959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1209444444
@@ -6022,7 +6022,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1234337349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!114 &1234337354
@@ -7243,7 +7243,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1362092758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1370721214
@@ -7446,7 +7446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1378535696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7454,7 +7454,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378535695}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -7471,7 +7471,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378535695}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
@@ -7494,7 +7494,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378535695}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
@@ -7661,7 +7661,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1419797392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1429384554
@@ -7803,7 +7803,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1429384554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1434022775
@@ -7962,7 +7962,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1470126084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1505203605
@@ -8065,7 +8065,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1505203605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1528788190
@@ -9020,7 +9020,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650320643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1650488676
@@ -9281,7 +9281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 37.99994, y: -57.205017}
+  m_AnchoredPosition: {x: 38, y: -57.20508}
   m_SizeDelta: {x: 207.72192, y: 116.178955}
   m_Pivot: {x: 0.52569526, y: 0.5076154}
 --- !u!114 &1677389922
@@ -9422,7 +9422,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1681448616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1692643108
@@ -10064,7 +10064,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766239650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1778223301
@@ -10387,7 +10387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 38, y: -57.205017}
+  m_AnchoredPosition: {x: 38, y: -57.20508}
   m_SizeDelta: {x: 207.722, y: 116.179}
   m_Pivot: {x: 0.52569526, y: 0.5076154}
 --- !u!114 &1790927538
@@ -10592,7 +10592,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1804679388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!70 &1804679390
@@ -11032,7 +11032,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1928512130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &1965482705
@@ -11284,7 +11284,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1984899634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &2014782545
@@ -11515,7 +11515,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2016576415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &2016875505
@@ -11656,7 +11656,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2016875505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d83bf18f265664186edae4937804e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c9ae5de2cd4a2b44b76b4f4021649a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSortingOrder
 --- !u!1 &2038236088
