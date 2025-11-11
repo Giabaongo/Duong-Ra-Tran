@@ -33,6 +33,10 @@ public class Enermy1968Controller : MonoBehaviour
     private float lastGiveUpTime = -999f; // Time when enemy last gave up
     private float firstAttackTime = -999f; // ★ NEW: Time when enemy first entered Attack state
     
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip shootingSound; // Âm thanh khi bắn
+    private AudioSource audioSource;
+    
     [Header("Components")]
     private Rigidbody2D rb;
     private Animator animator;
@@ -86,6 +90,14 @@ public class Enermy1968Controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+        
+        // Setup AudioSource if not present
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
         
         // Setup Rigidbody2D
         if (rb != null)
@@ -327,7 +339,8 @@ public class Enermy1968Controller : MonoBehaviour
                 Vector2 startPos = firePoint != null ? firePoint.position : transform.position;
                 Vector2 directionToPlayer = (player.position - (Vector3)startPos).normalized;
                 float distanceToPlayer = Vector2.Distance(startPos, player.position);
-                int layerMask = ~((1 << 9) | (1 << 10));
+                int cameraborderLayer = LayerMask.NameToLayer("Cameraborder");
+                int layerMask = ~((1 << 9) | (1 << 10) | (1 << cameraborderLayer));
                 RaycastHit2D hit = Physics2D.Raycast(startPos, directionToPlayer, distanceToPlayer, layerMask);
                 
                 string blockingObject = hit.collider != null ? hit.collider.name : "Unknown";
@@ -354,6 +367,13 @@ public class Enermy1968Controller : MonoBehaviour
         
         isAttacking = true;
         lastShootTime = Time.time;
+        
+        // Play shooting sound
+        if (audioSource != null && shootingSound != null)
+        {
+            audioSource.PlayOneShot(shootingSound);
+            Debug.Log($"[Enemy] 🔊 Playing shooting sound!");
+        }
         
         // Spawn bullet
         Vector2 shootDirection = (player.position - transform.position).normalized;
@@ -395,8 +415,9 @@ public class Enermy1968Controller : MonoBehaviour
         float distanceToPlayer = Vector2.Distance(startPos, player.position);
         
         // Raycast from enemy to player
-        // Ignore layers: Enemy (9), PlayerBuller (10)
-        int layerMask = ~((1 << 9) | (1 << 10)); // Ignore Enemy and PlayerBuller layers
+        // Ignore layers: Enemy (9), PlayerBuller (10), Cameraborder
+        int cameraborderLayer = LayerMask.NameToLayer("Cameraborder");
+        int layerMask = ~((1 << 9) | (1 << 10) | (1 << cameraborderLayer)); // Ignore Enemy, PlayerBuller, and Cameraborder layers
         
         RaycastHit2D hit = Physics2D.Raycast(startPos, directionToPlayer, distanceToPlayer, layerMask);
         
@@ -564,7 +585,8 @@ public class Enermy1968Controller : MonoBehaviour
             float distanceToPlayer = Vector2.Distance(firePos, player.position);
             
             // Check if has line of sight
-            int layerMask = ~((1 << 9) | (1 << 10)); // Ignore Enemy and PlayerBuller layers
+            int cameraborderLayer = LayerMask.NameToLayer("Cameraborder");
+            int layerMask = ~((1 << 9) | (1 << 10) | (1 << cameraborderLayer)); // Ignore Enemy, PlayerBuller, and Cameraborder layers
             RaycastHit2D hit = Physics2D.Raycast(firePos, directionToPlayer, distanceToPlayer, layerMask);
             
             if (hit.collider != null && hit.collider.CompareTag("Player"))

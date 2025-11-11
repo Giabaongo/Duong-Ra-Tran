@@ -177,6 +177,7 @@ MonoBehaviour:
   damageAmount: 10
   continuousDamage: 0
   damageInterval: 1
+  attackSound: {fileID: 0}
 --- !u!114 &83274318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +204,7 @@ MonoBehaviour:
   initialAttackDelay: 1
   maxBlockedTime: 2
   giveUpCooldown: 5
+  shootingSound: {fileID: 8300000, guid: b6e943648ce81834597251f539128254, type: 3}
 --- !u!50 &83274319
 Rigidbody2D:
   serializedVersion: 5
@@ -1491,6 +1493,7 @@ MonoBehaviour:
   damageAmount: 10
   continuousDamage: 0
   damageInterval: 1
+  attackSound: {fileID: 0}
 --- !u!114 &487092510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,6 +1520,7 @@ MonoBehaviour:
   initialAttackDelay: 1
   maxBlockedTime: 2
   giveUpCooldown: 5
+  shootingSound: {fileID: 8300000, guid: b6e943648ce81834597251f539128254, type: 3}
 --- !u!50 &487092511
 Rigidbody2D:
   serializedVersion: 5
@@ -10440,7 +10444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 37.99994, y: -57.205017}
+  m_AnchoredPosition: {x: 38, y: -57.20508}
   m_SizeDelta: {x: 207.72192, y: 116.178955}
   m_Pivot: {x: 0.52569526, y: 0.5076154}
 --- !u!114 &843210856
@@ -20835,6 +20839,8 @@ GameObject:
   - component: {fileID: 1039792847}
   - component: {fileID: 1039792846}
   - component: {fileID: 1039792849}
+  - component: {fileID: 1039792850}
+  - component: {fileID: 1039792851}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -20862,12 +20868,12 @@ MonoBehaviour:
       Enabled: 0
       Size: {x: 0.2, y: 0.2}
     HardLimits:
-      Enabled: 0
+      Enabled: 1
       Size: {x: 0.8, y: 0.8}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 1, y: 1, z: 1}
+  Damping: {x: 0, y: 0, z: 0}
   Lookahead:
     Enabled: 0
     Time: 0
@@ -20951,6 +20957,39 @@ MonoBehaviour:
     MaxWindowSize: 0
     Padding: 0
   m_LegacyMaxWindowSize: -2
+--- !u!114 &1039792850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039792845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e8f7a9b1d2e4f6a8c9d0e1f2a3b4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
+  maxShakeMagnitude: 5
+  defaultDuration: 0.5
+  dampingSpeed: 1
+  useCinemachine: 1
+--- !u!114 &1039792851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039792845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBasicMultiChannelPerlin
+  NoiseProfile: {fileID: 11400000, guid: 983a3486134227b469e8bd566b86cb3c, type: 2}
+  PivotOffset: {x: 0, y: 0, z: 0}
+  AmplitudeGain: 0
+  FrequencyGain: 0
+  m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1079287067
 GameObject:
   m_ObjectHideFlags: 0
@@ -21163,6 +21202,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
+  shootingSound: {fileID: 8300000, guid: b6e943648ce81834597251f539128254, type: 3}
   maxHealth: 20
   OnHealthChanged:
     m_PersistentCalls:
@@ -21233,6 +21273,91 @@ Transform:
   - {fileID: 974389091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1157807144
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6683989536098316053, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683989536098316053, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683989536098316053, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -9251615
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.0282
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.92354
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789984859967193002, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896496176767476184, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: volume
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387126461496939511, guid: 49720498c80139f40ba766d7b431e678, type: 3}
+      propertyPath: m_Name
+      value: B52_Shadow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49720498c80139f40ba766d7b431e678, type: 3}
 --- !u!1 &1273870640
 GameObject:
   m_ObjectHideFlags: 0
@@ -21672,6 +21797,7 @@ MonoBehaviour:
   initialAttackDelay: 1
   maxBlockedTime: 2
   giveUpCooldown: 5
+  shootingSound: {fileID: 8300000, guid: b6e943648ce81834597251f539128254, type: 3}
 --- !u!114 &1317950672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21687,6 +21813,7 @@ MonoBehaviour:
   damageAmount: 10
   continuousDamage: 0
   damageInterval: 1
+  attackSound: {fileID: 0}
 --- !u!114 &1317950673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21901,6 +22028,7 @@ MonoBehaviour:
   damageAmount: 10
   continuousDamage: 0
   damageInterval: 1
+  attackSound: {fileID: 0}
 --- !u!114 &1464101265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21927,6 +22055,7 @@ MonoBehaviour:
   initialAttackDelay: 1
   maxBlockedTime: 2
   giveUpCooldown: 5
+  shootingSound: {fileID: 8300000, guid: b6e943648ce81834597251f539128254, type: 3}
 --- !u!50 &1464101266
 Rigidbody2D:
   serializedVersion: 5
@@ -22230,6 +22359,7 @@ MonoBehaviour:
   damageAmount: 10
   continuousDamage: 0
   damageInterval: 1
+  attackSound: {fileID: 0}
 --- !u!114 &1512608618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22256,6 +22386,7 @@ MonoBehaviour:
   initialAttackDelay: 1
   maxBlockedTime: 2
   giveUpCooldown: 5
+  shootingSound: {fileID: 8300000, guid: b6e943648ce81834597251f539128254, type: 3}
 --- !u!50 &1512608619
 Rigidbody2D:
   serializedVersion: 5
@@ -23046,6 +23177,7 @@ MonoBehaviour:
   damageAmount: 10
   continuousDamage: 0
   damageInterval: 1
+  attackSound: {fileID: 0}
 --- !u!114 &1859753799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23072,6 +23204,7 @@ MonoBehaviour:
   initialAttackDelay: 1
   maxBlockedTime: 2
   giveUpCooldown: 5
+  shootingSound: {fileID: 8300000, guid: b6e943648ce81834597251f539128254, type: 3}
 --- !u!50 &1859753800
 Rigidbody2D:
   serializedVersion: 5
@@ -23868,3 +24001,4 @@ SceneRoots:
   - {fileID: 439379709}
   - {fileID: 2098630332}
   - {fileID: 1563406717}
+  - {fileID: 1157807144}

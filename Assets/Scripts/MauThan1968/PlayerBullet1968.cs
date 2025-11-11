@@ -142,6 +142,14 @@ public class PlayerBullet1968 : MonoBehaviour, IBullet
         
         Debug.Log($"[PlayerBullet] 🎯 Trigger Hit: {collision.gameObject.name} (Tag: {collision.gameObject.tag}, Layer: {LayerMask.LayerToName(collision.gameObject.layer)})");
         
+        // IGNORE: CameraBounds/Cameraborder - để bullet có thể bay xuyên qua
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Cameraborder") ||
+            collision.gameObject.name.Contains("CameraBounds"))
+        {
+            Debug.Log($"[PlayerBullet] ⚪ Ignoring CameraBounds - bullet passing through");
+            return;
+        }
+        
         // IGNORE: Không va chạm với Player, PlayerBullet, EnemyBullet
         if (collision.CompareTag("Player") || 
             collision.CompareTag("PlayerBullet") ||

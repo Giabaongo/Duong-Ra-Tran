@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - PlayerBullet
   - EnemyBullet
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -68,6 +69,12 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3773387129
+    locked: 0
+  - name: B52
+    uniqueID: 4285715681
+    locked: 0
+  - name: Bomb
+    uniqueID: 2737460115
     locked: 0
   m_RenderingLayers:
   - Default

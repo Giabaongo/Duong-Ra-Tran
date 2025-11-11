@@ -11,6 +11,21 @@ public class Enemy1968 : MonoBehaviour, IEnemy
     private float damageTimer = 0f;
     private bool isCollidingWithPlayer = false;
     private PlayerHealth1968 playerHealth;
+
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip attackSound; // Âm thanh khi tấn công
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        // Get or add AudioSource component
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
+    }
     
     private void Update()
     {
@@ -22,6 +37,13 @@ public class Enemy1968 : MonoBehaviour, IEnemy
             {
                 playerHealth.TakeDamage(damageAmount);
                 damageTimer = damageInterval;
+                
+                // Play attack sound
+                if (audioSource != null && attackSound != null)
+                {
+                    audioSource.PlayOneShot(attackSound);
+                }
+                
                 Debug.Log($"[Enemy1968] Continuous damage to player");
             }
         }
@@ -51,6 +73,13 @@ public class Enemy1968 : MonoBehaviour, IEnemy
             {
                 // GÂY DAMAGE 1 LẦN khi bắt đầu chạm
                 playerHealth.TakeDamage(damageAmount);
+                
+                // Play attack sound
+                if (audioSource != null && attackSound != null)
+                {
+                    audioSource.PlayOneShot(attackSound);
+                }
+                
                 Debug.Log($"[Enemy1968] ⚔️ One-time damage {damageAmount} to player!");
                 
                 // Setup cho continuous damage nếu bật
@@ -101,6 +130,13 @@ public class Enemy1968 : MonoBehaviour, IEnemy
             {
                 // GÂY DAMAGE 1 LẦN khi trigger
                 playerHealth.TakeDamage(damageAmount);
+                
+                // Play attack sound
+                if (audioSource != null && attackSound != null)
+                {
+                    audioSource.PlayOneShot(attackSound);
+                }
+                
                 Debug.Log($"[Enemy1968] ⚔️ Trigger one-time damage {damageAmount} to player!");
                 
                 // Setup cho continuous damage nếu bật

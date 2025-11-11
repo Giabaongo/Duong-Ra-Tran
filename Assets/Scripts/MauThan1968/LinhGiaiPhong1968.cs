@@ -18,6 +18,10 @@ public class LinhGiaiPhong1968 : MonoBehaviour
     [SerializeField] private float autoAimRange = 10f; // ★ NEW: Tầm tự động aim (10 units)
     [SerializeField] private LayerMask enemyLayer; // ★ NEW: Layer của enemy để detect
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip shootingSound; // Âm thanh khi bắn
+    private AudioSource audioSource;
+
     [Header("Components")]
     private Rigidbody2D rb;
     private Animator animator;
@@ -46,6 +50,7 @@ public class LinhGiaiPhong1968 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
 
         // Setup Rigidbody2D for 2D top-down movement
         if (rb != null)
@@ -63,6 +68,13 @@ public class LinhGiaiPhong1968 : MonoBehaviour
         if (animator == null)
         {
             Debug.LogWarning("Animator not found on LinhGiaiPhong1968!");
+        }
+
+        // Setup AudioSource if not present
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
         }
 
         // Initialize health
@@ -186,6 +198,12 @@ public class LinhGiaiPhong1968 : MonoBehaviour
         {
             Debug.LogWarning("Player bullet prefab not assigned!");
             return;
+        }
+        
+        // Play shooting sound
+        if (audioSource != null && shootingSound != null)
+        {
+            audioSource.PlayOneShot(shootingSound);
         }
         
         // ★ NEW: Auto-aim to nearest enemy if enabled and enemy in range

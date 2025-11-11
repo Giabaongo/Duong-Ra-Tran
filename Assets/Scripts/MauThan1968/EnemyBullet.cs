@@ -24,6 +24,14 @@ public class EnemyBullet : MonoBehaviour
         // ★ DEBUG: Log mọi va chạm
         Debug.Log($"★★★ ENEMY BULLET HIT: {collision.gameObject.name}, Layer: {collision.gameObject.layer} ({LayerMask.LayerToName(collision.gameObject.layer)}), Tag: '{collision.tag}'");
         
+        // IGNORE: CameraBounds/Cameraborder - để bullet có thể bay xuyên qua
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Cameraborder") ||
+            collision.gameObject.name.Contains("CameraBounds"))
+        {
+            Debug.Log($"[EnemyBullet] ⚪ Ignoring CameraBounds - bullet passing through");
+            return;
+        }
+        
         // IGNORE: Không va chạm với Enemy, EnemyBullet, PlayerBullet
         if (collision.CompareTag("Enemy") || 
             collision.CompareTag("EnemyBullet") ||
