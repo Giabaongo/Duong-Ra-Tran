@@ -26,6 +26,16 @@ public class EnemyHealth1968 : MonoBehaviour
     private static HashSet<string> deadEnemies = new HashSet<string>();
     private string enemyID;
     
+    /// <summary>
+    /// 🔄 PUBLIC METHOD: Clear tất cả dead enemies (dùng khi restart game)
+    /// </summary>
+    public static void ClearDeadEnemies()
+    {
+        int count = deadEnemies.Count;
+        deadEnemies.Clear();
+        Debug.Log($"[EnemyHealth] 🔄 Cleared {count} dead enemy IDs for game restart!");
+    }
+    
     private void Start()
     {
         // ★ ANTI-RESPAWN: Tạo unique ID cho enemy

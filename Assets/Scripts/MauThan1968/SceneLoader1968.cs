@@ -50,8 +50,16 @@ public class SceneLoader1968 : MonoBehaviour
     /// </summary>
     public void RestartCurrentScene()
     {
+        Debug.Log("[SceneLoader] 🔄 Restarting scene...");
+        
+        // ★ FIX: Clear dead enemies trước khi restart (backup - GameManager.Awake cũng clear)
+        EnemyHealth1968.ClearDeadEnemies();
+        
+        // Reset time scale nếu bị pause
+        Time.timeScale = 1f;
+        
         string currentScene = SceneManager.GetActiveScene().name;
-        Debug.Log($"[SceneLoader] Restarting scene: {currentScene}");
+        Debug.Log($"[SceneLoader] Loading scene: {currentScene}");
         SceneManager.LoadScene(currentScene);
     }
     

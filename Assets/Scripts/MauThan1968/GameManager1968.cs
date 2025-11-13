@@ -23,6 +23,11 @@ public class GameManager1968 : MonoBehaviour
     
     private void Awake()
     {
+        // ★★★ CRITICAL FIX: Clear dead enemies NGAY KHI SCENE LOAD! ★★★
+        // Điều này đảm bảo enemies luôn spawn lại, BẤT KỂ cách nào load scene!
+        EnemyHealth1968.ClearDeadEnemies();
+        Debug.Log("[GameManager1968] 🔄 Dead enemies cleared in Awake!");
+        
         // Singleton pattern (optional)
         if (instance == null)
         {
@@ -120,11 +125,18 @@ public class GameManager1968 : MonoBehaviour
     
     public void RestartGame()
     {
-        Debug.Log("Restarting game...");
+        Debug.Log("🔄 Restarting game...");
+        
+        // ★ CRITICAL FIX: Clear dead enemies tracking TRƯỚC KHI reload scene!
+        EnemyHealth1968.ClearDeadEnemies();
+        
         // Đặt lại time scale nếu đã dừng
         Time.timeScale = 1f;
+        
         // Reload current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        Debug.Log("✅ Scene reloaded! Enemies will spawn again!");
     }
     
     public void QuitGame()
