@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f59e54f2bfd184b9dd451a678d089b, type: 3}
   m_Name: B52ExplosionNoise
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.NoiseSettings
-  PositionNoise: []
-  OrientationNoise: []
+  PositionNoise:
+  - Frequency: 0.5
+    Amplitude: 50
+  - Frequency: 1
+    Amplitude: 30
+  - Frequency: 2
+    Amplitude: 20
+  OrientationNoise:
+  - Frequency: 2
+    Amplitude: 10
+  - Frequency: 4
+    Amplitude: 5
+  - Frequency: 7
+    Amplitude: 3

@@ -42,11 +42,80 @@ public class CameraShake : MonoBehaviour
             {
                 Debug.Log($"[CameraShake] ✅ Found CinemachineCamera: {gameObject.name}");
                 
-                // Unity 6: GetCinemachineComponent
-                perlinNoise = cinemachineCamera.GetComponent<CinemachineBasicMultiChannelPerlin>();
+                // Unity 6: Tìm ALL components để debug
+                var allComponents = GetComponents<MonoBehaviour>();
+                Debug.Log($"[CameraShake] 🔍 ALL MonoBehaviours on {gameObject.name}:");
+                foreach (var comp in allComponents)
+                {
+                    Debug.Log($"  - {comp.GetType().Name}");
+                }
+                
+                // Try 3 methods to find Perlin Noise
+                // Method 1: GetComponent (standard)
+                perlinNoise = GetComponent<CinemachineBasicMultiChannelPerlin>();
+                
+                // Method 2: GetComponentInChildren nếu là child
+                if (perlinNoise == null)
+                {
+                    perlinNoise = GetComponentInChildren<CinemachineBasicMultiChannelPerlin>();
+                    if (perlinNoise != null)
+                    {
+                        Debug.Log($"[CameraShake] 🔍 Found perlinNoise in CHILDREN!");
+                    }
+                }
+                
+                // Method 3: Tìm trong components của CinemachineCamera
+                if (perlinNoise == null)
+                {
+                    var components = cinemachineCamera.GetComponents<Component>();
+                    foreach (var c in components)
+                    {
+                        if (c is CinemachineBasicMultiChannelPerlin)
+                        {
+                            perlinNoise = c as CinemachineBasicMultiChannelPerlin;
+                            Debug.Log($"[CameraShake] 🔍 Found perlinNoise in CinemachineCamera components!");
+                            break;
+                        }
+                    }
+                }
+                
                 if (perlinNoise != null)
                 {
                     Debug.Log($"[CameraShake] ✅ Cinemachine 3.x setup successful! Noise: {perlinNoise.NoiseProfile}");
+                    
+                    // CRITICAL: Warn if NoiseProfile is null
+                    if (perlinNoise.NoiseProfile == null)
+                    {
+                        Debug.LogError("[CameraShake] ❌❌❌ NoiseProfile is NULL!");
+                        Debug.LogError("[CameraShake] FIX: Select 'CinemachineCamera' in Hierarchy → Inspector → Basic Multi Channel Perlin → Noise Profile → Assign 'B52ExplosionNoise.asset'");
+                    }
+                    
+                    Debug.Log($"[CameraShake] 📊 Initial Amp: {perlinNoise.AmplitudeGain}, Freq: {perlinNoise.FrequencyGain}");
+                    
+                    // Verify NoiseProfile has curves
+                    if (perlinNoise.NoiseProfile != null)
+                    {
+                        int posCount = perlinNoise.NoiseProfile.PositionNoise != null ? perlinNoise.NoiseProfile.PositionNoise.Length : 0;
+                        int rotCount = perlinNoise.NoiseProfile.OrientationNoise != null ? perlinNoise.NoiseProfile.OrientationNoise.Length : 0;
+                        Debug.Log($"[CameraShake] 🎵 NoiseProfile '{perlinNoise.NoiseProfile.name}' curves: Position={posCount}, Orientation={rotCount}");
+                        
+                        // Log detailed amplitude values (just log object to see structure)
+                        if (posCount > 0)
+                        {
+                            Debug.Log($"[CameraShake]   PositionNoise array content: {string.Join(", ", perlinNoise.NoiseProfile.PositionNoise)}");
+                        }
+                        if (rotCount > 0)
+                        {
+                            Debug.Log($"[CameraShake]   OrientationNoise array content: {string.Join(", ", perlinNoise.NoiseProfile.OrientationNoise)}");
+                        }
+                        
+                        if (posCount == 0 && rotCount == 0)
+                        {
+                            Debug.LogError("[CameraShake] ❌❌❌ NoiseProfile HAS NO CURVES! Camera will NOT shake!");
+                            Debug.LogError("[CameraShake] Fix: Assign B52ExplosionNoise.asset to CinemachineCamera → Basic Multi Channel Perlin → Noise Profile in Inspector!");
+                        }
+                    }
+                    
                     // Reset về 0 để script này control
                     perlinNoise.AmplitudeGain = 0;
                     perlinNoise.FrequencyGain = 0;
@@ -54,7 +123,8 @@ public class CameraShake : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("[CameraShake] ❌ CinemachineBasicMultiChannelPerlin not found! Thêm 'Basic Multi Channel Perlin' trong Procedural Components → Noise");
+                    Debug.LogError("[CameraShake] ❌❌❌ CinemachineBasicMultiChannelPerlin NOT FOUND with ALL 3 methods!");
+                    Debug.LogError("[CameraShake] Please check Inspector: CinemachineCamera → Add Extension → Noise → Basic Multi Channel Perlin");
                 }
             }
             else
@@ -71,6 +141,29 @@ public class CameraShake : MonoBehaviour
     void Start()
     {
         originalPosition = transform.localPosition;
+        
+        // VERIFY: Check if Main Camera has CinemachineBrain
+        if (useCinemachine)
+        {
+            var mainCamera = Camera.main;
+            if (mainCamera != null)
+            {
+                var brain = mainCamera.GetComponent<CinemachineBrain>();
+                if (brain == null)
+                {
+                    Debug.LogError("[CameraShake] ❌❌❌ CRITICAL: Main Camera MISSING CinemachineBrain component!");
+                    Debug.LogError("[CameraShake] Add CinemachineBrain to Main Camera: GameObject → Main Camera → Add Component → Cinemachine Brain");
+                }
+                else
+                {
+                    Debug.Log($"[CameraShake] ✅ CinemachineBrain found on Main Camera! UpdateMethod: {brain.UpdateMethod}, BlendUpdateMethod: {brain.BlendUpdateMethod}");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("[CameraShake] ⚠️ Main Camera not found!");
+            }
+        }
     }
     
     void LateUpdate()
@@ -85,7 +178,7 @@ public class CameraShake : MonoBehaviour
                 // Lazy init nếu chưa có
                 if (perlinNoise == null && cinemachineCamera != null)
                 {
-                    perlinNoise = cinemachineCamera.GetComponent<CinemachineBasicMultiChannelPerlin>();
+                    perlinNoise = GetComponent<CinemachineBasicMultiChannelPerlin>();
                     if (perlinNoise != null)
                     {
                         Debug.Log("[CameraShake] 🔄 Lazy initialized perlinNoise!");
@@ -94,19 +187,23 @@ public class CameraShake : MonoBehaviour
                 
                 if (perlinNoise != null)
                 {
-                    float oldAmp = perlinNoise.AmplitudeGain;
-                    perlinNoise.AmplitudeGain = shakeMagnitude;
-                    perlinNoise.FrequencyGain = shakeMagnitude * 2f;
+                    // IMPORTANT: For Cinemachine, ONLY Perlin Noise works!
+                    // Manual transform shake is USELESS for virtual cameras!
                     
-                    // Log lần đầu để verify
-                    if (oldAmp == 0 && shakeMagnitude > 0)
+                    // Test with EXTREME amplitude (x100)!
+                    float extremeAmp = shakeMagnitude * 100f;
+                    perlinNoise.AmplitudeGain = extremeAmp;
+                    perlinNoise.FrequencyGain = extremeAmp * 2f; // Higher frequency = more visible
+                    
+                    // Log every frame during shake (first 0.1s only)
+                    if (shakeTimer > (defaultDuration - 0.1f))
                     {
-                        Debug.Log($"[CameraShake] ✅ Setting Perlin! Amp: {shakeMagnitude:F2}, Freq: {(shakeMagnitude * 2f):F2}");
+                        Debug.Log($"[CameraShake] 💥 EXTREME SHAKE! Amp: {extremeAmp:F2}, Freq: {(extremeAmp * 2f):F2}, Timer: {shakeTimer:F2}s");
                     }
                 }
                 else
                 {
-                    Debug.LogWarning("[CameraShake] ⚠️ perlinNoise is NULL! Cannot shake Cinemachine camera!");
+                    Debug.LogError("[CameraShake] ❌ perlinNoise is NULL! Cannot shake Cinemachine camera!");
                 }
             }
             else
